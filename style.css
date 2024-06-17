@@ -1,6 +1,6 @@
 body {
   margin: 40px auto;
-  max-width: 800px;
+  max-width: 80%;
   line-height: 1.6;
   font-size: 18px;
   color: #444;
@@ -50,3 +50,35 @@ h1, h2, h3
   color: #007bff;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  body {
+      font-size: 16px;
+  }
+  
+  .profile-picture {
+      width: 120px;
+      height: 120px;
+  }
+  
+  .social-icons a {
+      font-size: 24px;
+      margin: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+      font-size: 14px;
+  }
+  
+  .profile-picture {
+      width: 100px;
+      height: 100px;
+  }
+  
+  .social-icons a {
+      font-size: 20px;
+      margin: 0 3px;
+  }
+}
