@@ -3,6 +3,7 @@ body {
   max-width: 80%;
   line-height: 1.6;
   font-size: 18px;
+  padding: 0 20px; /* Add padding to maintain margins on small screens */
   color: #444;
   font-family: 'LMRoman10', serif; /* Use Latin Modern font */
 }
@@ -54,6 +55,7 @@ h1, h2, h3
 @media (max-width: 768px) {
   body {
       font-size: 16px;
+      padding: 0 15px; /* Adjust padding for medium screens */
   }
   
   .profile-picture {
@@ -70,6 +72,7 @@ h1, h2, h3
 @media (max-width: 480px) {
   body {
       font-size: 14px;
+      padding: 0 10px; /* Adjust padding for small screens */
   }
   
   .profile-picture {
