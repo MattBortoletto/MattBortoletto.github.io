@@ -6,6 +6,11 @@ body {
   color: #444;
 }
 
+.header {
+  margin-bottom: 40px; /* Add space between header and content */
+  text-align: center; /* Center the content */
+}
+
 h1, h2, h3
 {
   line-height: 1.2
