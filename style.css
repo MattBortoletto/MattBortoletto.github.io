@@ -28,6 +28,7 @@ h1, h2, h3
 
 .social-icons {
   margin-top: 20px;
+  text-align: center; /* Center the content */
 }
 
 .social-icons a {
