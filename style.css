@@ -5,7 +5,7 @@ body {
   line-height: 1.6;
   font-size: 18px;
   color: #444;
-  font-family: 'LMSans10', serif; /* Use Latin Modern font */
+  font-family: 'LMRoman10', serif; /* Use Latin Modern font */
 }
 
 .header {
