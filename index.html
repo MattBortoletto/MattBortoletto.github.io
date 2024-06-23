@@ -1,43 +1,119 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matteo's Website</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Latin Modern Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/latin-modern-roman">
+    <style>
+        body {
+            font-family: 'LMRoman10';
+            background-color: #fff;
+            color: #444;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            text-align: center; /* Center the content */
+        }
+        h2 {
+            color: #444;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .ascii-art {
+            font-family: monospace;
+            white-space: pre;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+        .subheader {
+            font-size: 10px;
+            text-align: center;
+            margin-top: -20px;
+            margin-bottom: 20px;
+        }
+        /* ul {
+            list-style-type: "> ";
+        } */
+        a {
+            color: rgb(1, 121, 111);
+        }
+        a:hover {
+            color: rgb(1, 121, 111);
+            text-decoration: underline;
+        }
+        .command {
+            color: rgb(1, 121, 111);
+        }
+        .social-icons {
+            margin-top: 20px;
+            text-align: center; /* Center the content */
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #444;
+            font-size: 30px;
+            margin: 0 10px;
+            transition: color 0.3s;
+            text-align: center; /* Center the content */
+        }
+        .social-icons a:hover {
+            color: rgb(1, 121, 111);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    
+
     <header class="header">
         <div class="profile-picture">
             <img src="assets/profile.png" alt="Matteo Bortoletto">
         </div>
-        <div><h1>Matteo Bortoletto</h1></div>
-        <div>PhD Candidate, University of Stuttgart</div>
+        <h1>Matteo Bortoletto</h1>
+        <p>PhD Candidate, University of Stuttgart</p>
         <div class="social-icons">
-            <a href="mailto:matteo.bortoletto@vis.uni-stuttgart.de" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" target="_blank"><i class="fa-brands fa-google-scholar"></i></a>
-            <a href="https://github.com/MattBortoletto" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://twitter.com/MattBorto" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="assets/CV.pdf" target="_blank"><i class="fa-solid fa-file"></i></a>
+            <a href="mailto:matteo.bortoletto@vis.uni-stuttgart.de" title="Sending Stone"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Tome of Knowledge"><i class="fa-brands fa-google-scholar"></i></a>
+            <a href="https://github.com/MattBortoletto" title="Arcane Repository"><i class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/MattBorto" title="Mystic Messenger"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="assets/CV.pdf" title="Scroll of Achievements"><i class="fa-solid fa-scroll"></i></a>
         </div>
     </header>
 
-    <h1>about</h1>
-      <p>
+    <h2>About</h2>
+    <p>
         I am a PhD Student in Computer Science at the University of Stuttgart, Germany, advised by Prof. Andreas Bulling. 
         My research focuses on computational theory of mind, with a specific emphasis on deep learning approaches. 
         In my work, I design and assess innovative AI models for theory of mind tasks that span multiple modalities, including vision, natural language, gaze, and pose. 
         My ultimate goal is to improve human-AI collaboration. 
-        <!-- For some reason, I end up using graph neural networks in every project I work on.  -->
-        I hold a BSc degree in Physics and a MSc degree in Physics of Data from the University of Padua, Italy (where Galileo taught Mathematics and the first woman got a PhD!). 
+    </p>
+    <p>
+        I hold a BSc degree in Physics and a MSc degree in Physics of Data from the University of Padua, Italy. 
         During my studies I focused on theoretical physics, in particular theoretical ecology and neuroscience.
-      </p>
+    </p>
 
-    <h1>news</h1>
-      <ul>
+    <h2>News</h2>
+    <ul>
         <li>[16.05.2024] 🔥 Paper accepted at ACL 2024 (Bangkok, Thailand)</li>
         <li>[01.05.2024] 🛫 I got accepted at the ELLIS CoGenAI Summer School in Helsinki, Finland</li>
         <li>[25.03.2024] 👨🏼‍🏫 Constantin Ruhdofer, Anna Penzkofer and I are organising a practical course “Computational Theory of Mind and Cognition”. Our course has limited spots available, don't miss out on this opportunity!</li>
@@ -46,43 +122,64 @@
         <li>[29.09.2023] 📑 Reviewing for CHI 2024</li>
         <li>[07.04.2023] 🔥 Paper accepted at CogSci 2023 (Sydney, Australia)</li>
         <li>[27.03.2023] 🔥 Paper accepted at INTERACT 2023 (York, UK)</li>
-      </ul>
+    </ul>
 
-    <h1>research topics</h1>
-      <p>These days I'm especially interested in:</p>
-      <ul>
+    <h2>Research</h2>
+    <p>These days I'm especially interested in:</p>
+    <ul>
         <li>Probing LLMs' internal representations, in particular those of mental states of others</li>
         <li>Designing socially-aware LLMs with advanced theory of mind capabilities</li>
         <li>Building causal models for planning using theory of mind</li>
         <li>Learning theory of mind through world models</li>
         <li>Improving human-AI collaboration using theory of mind</li>
-        </ul>
-      <p>I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarise every new paper that involve theory of mind and LLMs.</p>
+    </ul>
+    <p>I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">scroll</a> where I summarize every new scroll involving theory of mind and LLMs.</p>
 
-    <h1>publications</h1>
+    <h2>Publications</h2>
     <ol>
         <li>
             <strong>M Bortoletto</strong>, C Ruhdorfer, A Abdessaied, L Shi, A Bulling "Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition." <strong>ACL</strong>, 2024
-            <a href="https://arxiv.org/pdf/2405.12621" target="_blank"><i class="fas fa-file"></i></a>
+            <a href="https://arxiv.org/pdf/2405.12621" title="View Scroll"><i class="fas fa-scroll"></i></a>
         </li>
         <li>
             <strong>M Bortoletto</strong>, L Shi, A Bulling "Neural Reasoning about Agents' Goals, Preferences, and Actions." <strong>AAAI</strong>, 2024
-            <a href="https://arxiv.org/pdf/2312.07122" target="_blank"><i class="fas fa-file"></i></a>
+            <a href="https://arxiv.org/pdf/2312.07122" title="View Scroll"><i class="fas fa-scroll"></i></a>
         </li>
         <li>
             E Sood, L Shi, <strong>M Bortoletto</strong>, Y Wang, P Müller, A Bulling "Improving Neural Saliency Prediction with a Cognitive Model of Human Visual Attention." CogSci, 2023
-            <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf" target="_blank"><i class="fas fa-file"></i></a>
+            <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf" title="View Scroll"><i class="fas fa-scroll"></i></a>
         </li>
         <li>
             G Zhang, <strong>M Bortoletto</strong>, Z Hu, L Shi, M Bâce, A Bulling "Exploring Natural Language Processing Methods for Interactive Behaviour Modelling." INTERACT, 2023
-            <a href="https://arxiv.org/pdf/2303.16039" target="_blank"><i class="fas fa-file"></i></a>
+            <a href="https://arxiv.org/pdf/2303.16039" title="View Scroll"><i class="fas fa-scroll"></i></a>
         </li>
     </ol>
 
-    <h1>supervision</h1>
-      <p>
-        I regulary supervise Master and Bachelor theses, if you have an idea for a thesis feel free to email me. 
+    <h2>Padawans</h2>
+    <p>
+        I regularly supervise Master and Bachelor theses. 
+        If you have an idea for you thesis, feel free to contact me. 
         If you are looking for available projects, check if there are Open Thesis Projects <a href="https://www.perceptualui.org/people/bortoletto/">here</a>.
-      </p>
+    </p>
+
+    <div class="ascii-art">
+                  .
+
+                   .
+         /^\     .
+    /\   "V"
+   /__\   I      O  o
+  //..\\  I     .
+  \].`[/  I
+  /l\/j\  (]    .  O
+ /. ~~ ,\/I          .
+ \\L__j^\/I       o
+  \/--v}  I     o   .
+  |    |  I   _________
+  |    |  I c(`       ')o
+  |    l  I   \.     ,/
+_/j  L l\_!  _//^---^\\_  
+    </div>
+
 </body>
 </html>
