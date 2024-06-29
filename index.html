@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matteo Bortoletto</title>
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/latin-modern-roman">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
             font-family: 'LMRoman10';
@@ -22,13 +23,12 @@
             height: 150px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto;
+            margin-top: 50px;
         }
         .profile-picture img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            text-align: center; /* Center the content */
         }
         h2 {
             color: #444;
@@ -36,8 +36,17 @@
             padding-bottom: 5px;
         }
         .header {
-            text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px; /* Reduced the gap between elements */
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
         }
         .ascii-art {
             text-align: center;
@@ -46,55 +55,48 @@
             font-size: 12px;
             line-height: 1.2;
         }
-        .subheader {
-            font-size: 10px;
-            text-align: center;
-            margin-top: -20px;
-            margin-bottom: 20px;
-        }
         a {
             color: rgb(1, 121, 111);
         }
-        a:hover {
-            color: rgb(1, 121, 111);
-            text-decoration: underline;
-        }
-        .command {
-            color: rgb(1, 121, 111);
-        }
         .social-icons {
-            margin-top: 20px;
-            text-align: center; /* Center the content */
+            display: flex;
+            gap: 40px; /* Adjust the gap between social icons as needed */
         }
         .social-icons a {
             text-decoration: none;
             color: #444;
             font-size: 30px;
-            margin: 0 10px;
             transition: color 0.3s;
-            text-align: center; /* Center the content */
         }
         .social-icons a:hover {
             color: rgb(1, 121, 111);
         }
+        .highlight {
+            font-size: 36px; /* Increase the font size */
+            font-weight: bold; /* Make the text bold */
+            margin-bottom: 0px;
+        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    
-
     <header class="header">
-        <div class="profile-picture">
-            <img src="assets/profile.png" alt="Matteo Bortoletto">
-        </div>
-        <h1>Matteo Bortoletto</h1>
-        <p>PhD Candidate, University of Stuttgart</p>
-        <div class="social-icons">
-            <a href="mailto:matteo.bortoletto@vis.uni-stuttgart.de" title="Mail"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Scholar"><i class="fa-brands fa-google-scholar"></i></a>
-            <a href="https://github.com/MattBortoletto" title="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://twitter.com/MattBorto" title="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="assets/CV.pdf" title="CV"><i class="fa-solid fa-scroll"></i></a>
+        <div class="header-content">
+            <div class="profile-picture">
+                <img src="assets/profile.png" alt="Matteo Bortoletto">
+            </div>
+            <div class="profile-info">
+                <div>
+                    <p class="highlight">Matteo Bortoletto</p>
+                    <p>matteo [dot] bortoletto [at] vis [dot] uni-stuttgart [dot] de</p>
+                </div>
+                <div class="social-icons">
+                    <!-- <a href="mailto:matteo.bortoletto@vis.uni-stuttgart.de" title="Mail"><i class="fa-solid fa-envelope"></i></a> -->
+                    <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+                    <a href="https://github.com/MattBortoletto" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://twitter.com/MattBorto" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="assets/CV.pdf" title="CV"><i class="fa-solid fa-scroll"></i></a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -172,6 +174,5 @@
     <div style="text-align: center;">
         <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e8b59154-c192-4417-888b-f9731b36ae89/daxnkcx-3db57900-9d17-4f68-8323-4bfd7031fc3b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U4YjU5MTU0LWMxOTItNDQxNy04ODhiLWY5NzMxYjM2YWU4OVwvZGF4bmtjeC0zZGI1NzkwMC05ZDE3LTRmNjgtODMyMy00YmZkNzAzMWZjM2IuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.W3zjrny0ezsx5e-uGiQcLQKfQbgHFp-MQqGdzqWM-4g" alt="Sleeping Totoro GIF">
     </div>
-
 </body>
 </html>
