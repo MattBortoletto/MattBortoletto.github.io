@@ -87,25 +87,6 @@
             margin-bottom: 0px;
             margin-top: 20px;
         }
-        .expandable-header {
-            color: rgb(108, 106, 239);
-            cursor: pointer;
-            user-select: none;
-        }
-        .arrow {
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-        .expanded .arrow {
-            transform: rotate(90deg);
-        }
-        .content {
-            display: none;
-            margin-left: 20px;
-        }
-        .expanded .content {
-            display: block;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -139,44 +120,13 @@
         <li>Causal models for planning using theory of mind</li>
         <li>Learning theory of mind through world models</li>
     </ul>
-    <p>I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarize every new paper involving theory of mind and LLMs.</p>
+    <p>
+        Check out the summary of <a href="#my-view">my research vision in under 200 words</a>. 
+        I also maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarize every new paper involving theory of mind and LLMs.</p>
     <p>
         I hold a BSc and a MSc degree in Physics. 
         During my studies I focused on theoretical physics, in particular theoretical ecology and neuroscience.
     </p>
-
-    <div id="expandableSection" class="expandable-section">
-        <div class="expandable-header">
-            <span class="arrow">➡️</span> <strong>My view on machine theory of mind</strong>
-        </div>
-        <div class="content">
-            <p>
-                Current pre-trained foundation models are reducing more and more the relevance of training specialised ToM systems. 
-                This shift eliminates concerns about overfitting or learning shortcuts during training, though pre-trained models can still use shortcuts. 
-                Instead, we must now focus on addressing task contamination and improving interpretability to detect if and/or how foundation models use shortcuts.
-            </p>   
-            <p>
-                Given this new landscape, I identify two priorities:
-                First, we need to develop <strong>dynamic benchmarks</strong> that resist simple memorisation. 
-                Second, we must continue exploring how to adapt state-of-the-art <strong>interpretability methods</strong> to study theory of mind in these models.
-            </p>
-            <p>
-                Theory of mind is fundamentally grounded in real-world social interactions. 
-                Consequently, <strong>new benchmarks should not only be dynamic but also grounded</strong>, ideally situated in open-ended environments. 
-                This move away from fixed benchmarks will also help mitigate task contamination issues.
-                Once we have established these new benchmarks, theory of mind capabilities will serve a crucial role in planning. 
-                More specifically, ToM will be used to construct <strong>causal models</strong>, which in turn will guide <strong>planning</strong> processes.
-            </p>        
-        </div>
-    </div>
-    <script>
-        const section = document.getElementById('expandableSection');
-        const header = section.querySelector('.expandable-header');
-
-        header.addEventListener('click', function() {
-            section.classList.toggle('expanded');
-        });
-    </script>
 
     <h2>News</h2> 
     <ul>
@@ -225,6 +175,25 @@
             <a href="https://arxiv.org/pdf/2303.16039" title="View Scroll"><i class="fas fa-scroll"></i></a>
         </li>
     </ol>
+
+    <h2 id="my-view">My view on machine theory of mind</h2>
+    <p>
+        Current pre-trained foundation models are reducing more and more the relevance of training specialised ToM systems. 
+        This shift eliminates concerns about overfitting or learning shortcuts during training, though pre-trained models can still use shortcuts. 
+        Instead, we must now focus on addressing task contamination and improving interpretability to detect if and/or how foundation models use shortcuts.
+    </p>   
+    <p>
+        Given this new landscape, I identify two priorities:
+        First, we need to develop <strong>dynamic benchmarks</strong> that resist simple memorisation. 
+        Second, we must continue exploring how to adapt state-of-the-art <strong>interpretability methods</strong> to study theory of mind in these models.
+    </p>
+    <p>
+        Theory of mind is fundamentally grounded in real-world social interactions. 
+        Consequently, <strong>new benchmarks should not only be dynamic but also grounded</strong>, ideally situated in open-ended environments. 
+        This move away from fixed benchmarks will also help mitigate task contamination issues.
+        Once we have established these new benchmarks, theory of mind capabilities will serve a crucial role in planning. 
+        More specifically, ToM will be used to construct <strong>causal models</strong>, which in turn will guide <strong>planning</strong> processes.
+    </p>        
 
     <h2>Padawans</h2>
     <p>
