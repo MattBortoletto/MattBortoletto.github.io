@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta name="google-site-verification" content="MP6E6gPO4pSQa4r4L4m-Xyh1GWSx67nkC-DLpi9Hlhc" />
     <meta charset="UTF-8">
@@ -20,14 +21,14 @@
         .profile-picture {
             width: 150px;
             height: 150px;
-            border-radius: 50%; 
+            border-radius: 50%;
             overflow: hidden;
         }
         .profile-picture img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            text-align: center; 
+            text-align: center;
         }
         h1 {
             color: rgb(108, 106, 239);
@@ -72,91 +73,102 @@
         .social-icons a:hover {
             color: rgb(108, 106, 239);
         }
+        .introduction {
+            flex: 70%;
+            padding: 20px;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <h1 align="center">Matteo Bortoletto</h1>
-    <table width="100%" border="0" cellspacing="0" cellpadding="15">
+
+    <table width="100%" border="0" cellspacing="0">
         <tr>
-            <td width="70%" valign="top" align="justify">
-                I am a PhD Student in Computer Science at the University of Stuttgart, Germany, advised by Prof. Andreas Bulling. 
-                My research focuses on computational theory of mind, with a specific emphasis on deep learning approaches. 
+            <td width="25%" valign="top" style="padding-top: 5px;"><a href="assets/profile.png"><img src="assets/profile.png" width="100%" style="border-radius:15px"></a>
+                <p align=left>
+                    <a href="assets/contact.txt" title="Mail">[Contact]</a><br>
+                    <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Scholar">[Google
+                        Scholar]</i></a><br>
+                    <a href="https://github.com/MattBortoletto" title="GitHub">[GitHub]</a><br>
+                    <a href="https://twitter.com/MattBorto" title="X">[X]</a><br>
+                    <a href="https://www.linkedin.com/in/matteo-bortoletto-844609114/"
+                        title="Linkedin">[Linkedin]</a><br>
+                    <a href="assets/CV.pdf" title="CV">[CV]</a>
+                </p>
+            </td>
+            <td width="75%" valign="top" align="justify" style="padding-left: 20px; padding-top: 0px;">
+                I am a PhD Student in Computer Science at the University of Stuttgart, Germany, advised by Prof. Andreas Bulling.
+                My research focuses on computational theory of mind, with a specific emphasis on deep learning approaches.
                 The ultimate goal is improving human-AI collaboration.
                 I'm especially interested in:
                 <ul>
-                    <li>Designing and assessing AI models for theory of mind tasks that span multiple modalities, including vision and natural language</li>
+                    <li>Designing and assessing AI models for theory of mind tasks that span multiple modalities,
+                        including vision and natural language</li>
                     <li>Probing and manipulating LLMs' internal representations of mental states</li>
                     <li>Causal models for planning using theory of mind</li>
                     <li>Learning theory of mind through world models</li>
                 </ul>
                 <p>
-                    I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarize every new paper involving theory of mind and LLMs.</p>
-                <p>
-                    I hold a BSc and a MSc degree in Physics. 
-                    During my studies I focused on theoretical physics, in particular theoretical ecology and neuroscience.
+                    I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarize every new paper involving theory of mind and LLMs.
                 </p>
-              </td>
-            <td width="25%" valign="top"><a href="assets/profile.png"><img src="assets/profile.png" width="100%" style="border-radius:15px"></a>
-            <p align=right>
-                <a href="assets/contact.txt" title="Mail">[Contact]</a><br>
-                <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Scholar">[Google Scholar]</i></a><br>
-                <a href="https://github.com/MattBortoletto" title="GitHub">[GitHub]</a><br>
-                <a href="https://twitter.com/MattBorto" title="X">[X]</a><br>
-                <a href="https://www.linkedin.com/in/matteo-bortoletto-844609114/" title="Linkedin">[Linkedin]</a><br>
-                <a href="assets/CV.pdf" title="CV">[CV]</a>
-            </p>
+                I hold a BSc and a MSc degree in Physics.
+                During my studies I focused on theoretical physics, in particular theoretical ecology and neuroscience.
             </td>
         </tr>
-      </table>
-    
-    <!-- <div style="margin-block-start: 0.5em">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h1>Matteo Bortoletto</h1>
-            <div class="profile-picture">
-                <img src="assets/profile.png" alt="Matteo Bortoletto">
-            </div>
-        </div>
-    </div>
+    </table>
 
-    <p>
-        I am a PhD Student in Computer Science at the University of Stuttgart, Germany, advised by Prof. Andreas Bulling. 
-        My research focuses on computational theory of mind, with a specific emphasis on deep learning approaches. 
-        The ultimate goal is improving human-AI collaboration.
-        I'm especially interested in:
-    </p>
-    <ul>
-        <li>Designing and assessing AI models for theory of mind tasks that span multiple modalities, including vision and natural language</li>
-        <li>Probing and manipulating LLMs' internal representations of mental states</li>
-        <li>Causal models for planning using theory of mind</li>
-        <li>Learning theory of mind through world models</li>
-    </ul>
-    <p>
-        I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarize every new paper involving theory of mind and LLMs.</p>
-    <p>
-        I hold a BSc and a MSc degree in Physics. 
-        During my studies I focused on theoretical physics, in particular theoretical ecology and neuroscience.
-    </p>
-    <p>
-        <a href="assets/contact.txt" title="Mail">[Contact]</a>
-        <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Scholar">[Google Scholar]</i></a>
-        <a href="https://github.com/MattBortoletto" title="GitHub">[GitHub]</a>
-        <a href="https://twitter.com/MattBorto" title="X">[X]</a>
-        <a href="https://www.linkedin.com/in/matteo-bortoletto-844609114/" title="Linkedin">[Linkedin]</a>
-        <a href="assets/CV.pdf" title="CV">[CV]</a>
-    </p> -->
+    <!-- <table width="100%" border="0" cellspacing="0">
+        <tr>
+            <td width="70%" valign="top" align="justify" style="padding-right: 20px; padding-top: 0px;">
+                I am a PhD Student in Computer Science at the University of Stuttgart, Germany, advised by Prof. Andreas Bulling.
+                My research focuses on computational theory of mind, with a specific emphasis on deep learning approaches.
+                The ultimate goal is improving human-AI collaboration.
+                I'm especially interested in:
+                <ul>
+                    <li>Designing and assessing AI models for theory of mind tasks that span multiple modalities,
+                        including vision and natural language</li>
+                    <li>Probing and manipulating LLMs' internal representations of mental states</li>
+                    <li>Causal models for planning using theory of mind</li>
+                    <li>Learning theory of mind through world models</li>
+                </ul>
+                <p>
+                    I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarize every new paper involving theory of mind and LLMs.
+                </p>
+                I hold a BSc and a MSc degree in Physics.
+                During my studies I focused on theoretical physics, in particular theoretical ecology and neuroscience.
+            </td>
+            <td width="25%" valign="top" style="padding-top: 5px;"><a href="assets/profile.png"><img src="assets/profile.png" width="100%" style="border-radius:15px"></a>
+                <p align=right>
+                    <a href="assets/contact.txt" title="Mail">[Contact]</a><br>
+                    <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Scholar">[Google
+                        Scholar]</i></a><br>
+                    <a href="https://github.com/MattBortoletto" title="GitHub">[GitHub]</a><br>
+                    <a href="https://twitter.com/MattBorto" title="X">[X]</a><br>
+                    <a href="https://www.linkedin.com/in/matteo-bortoletto-844609114/"
+                        title="Linkedin">[Linkedin]</a><br>
+                    <a href="assets/CV.pdf" title="CV">[CV]</a>
+                </p>
+            </td>
+        </tr>
+    </table> -->
 
-    <h2>News</h2> 
+    <h2>News</h2>
     <ul>
         <li>[10.07.2024] 🏅 I have been selected as volunteer for ACL 2024</li>
-        <li>[04.07.2024] 🔥 Paper accepted at ECAI 2024 (Santiago de Compostela, Spain) 
-        <li>[24.06.2024] 🔥 Paper accepted at ICML 2024 <a href="https://icml2024mi.pages.dev"> Workshop on Mechanistic Interpretability</a> (Vienna, Austria)</li>
+        <li>[04.07.2024] 🔥 Paper accepted at ECAI 2024 (Santiago de Compostela, Spain)
+        <li>[24.06.2024] 🔥 Paper accepted at ICML 2024 <a href="https://icml2024mi.pages.dev"> Workshop on Mechanistic
+                Interpretability</a> (Vienna, Austria)</li>
         <li>[16.05.2024] 🔥 Paper accepted at ACL 2024 (Bangkok, Thailand)</li>
-        <li>[01.05.2024] ☀️ I got accepted at the <a href="assets/cogenai-certificate.pdf"> CoGenAI Summer School</a> (Aalto University, Finland)</li>
-        <li>[25.03.2024] 👨🏼‍🏫 Constantin Ruhdorfer, Anna Penzkofer and I are organising a new course titled “Computational Theory of Mind and Cognition”</li>
-        <li>[01.03.2024] 🏆 My student Constantin Ruhdorfer's master's thesis was awarded the Rul Gunzenhäuser Award</li>
-        <li>[18.12.2023] 🏅 I have been selected as <a href="assets/VolunteerCertificateAAAI24.pdf">volunteer for AAAI 2024</a></li>
+        <li>[01.05.2024] ☀️ I got accepted at the <a href="assets/cogenai-certificate.pdf"> CoGenAI Summer School</a>
+            (Aalto University, Finland)</li>
+        <li>[25.03.2024] 👨🏼‍🏫 Constantin Ruhdorfer, Anna Penzkofer and I are organising a new course titled
+            “Computational Theory of Mind and Cognition”</li>
+        <li>[01.03.2024] 🏆 My student Constantin Ruhdorfer's master's thesis was awarded the Rul Gunzenhäuser Award
+        </li>
+        <li>[18.12.2023] 🏅 I have been selected as <a href="assets/VolunteerCertificateAAAI24.pdf">volunteer for AAAI
+                2024</a></li>
         <li>[09.12.2023] 🔥 Paper accepted at AAAI 2024 (Vancouver, Canada)</li>
         <li>[29.09.2023] 📑 Reviewing for CHI 2024</li>
         <li>[07.04.2023] 🔥 Paper accepted at CogSci 2023 (Sydney, Australia)</li>
@@ -164,68 +176,71 @@
     </ul>
 
     <h2>Publications</h2>
-        <p>
-            <strong>Explicit Modelling of Theory of Mind for Belief Prediction in Nonverbal Social Interactions</strong> <br />
-            <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling <br />
-            <i>ECAI 2024</i>
-            <a href="https://arxiv.org/pdf/2407.06762" title="View Scroll"><i class="fas fa-scroll"></i></a>
-        <p>
-    
-        <p>
-            <strong>The Overcooked Generalisation Challenge</strong> <br />
-            C Ruhdorfer, <u>M Bortoletto</u>, A Penzkofer, A Bulling <br />
-            <i>Preprint</i>
-            <a href="https://arxiv.org/pdf/2406.17949" title="View Scroll"><i class="fas fa-scroll"></i></a>
-        </p>
-    
-        <p>
-            <strong>Benchmarking Mental State Representations in Language Models</strong> <br />
-            <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling <br />
-            <i>ICML 2024 Workshop on Mechanistic Interpretability</i>
-            <a href="https://arxiv.org/pdf/2406.17513" title="View Scroll"><i class="fas fa-scroll"></i></a>
-            <a href="assets/posters/poster_ICML.pdf" title="View Poster"><i class="fas fa-image"></i></a>
-        </p>
-    
-        <p>
-            <strong>Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition</strong> <br />
-            <u>M Bortoletto</u>, C Ruhdorfer, A Abdessaied, L Shi, A Bulling <br />
-            <i>ACL 2024</i> 
-            <a href="https://arxiv.org/pdf/2405.12621" title="View Scroll"><i class="fas fa-scroll"></i></a>
-            <a href="assets/posters/poster_ACL24.pdf" title="View Poster"><i class="fas fa-image"></i></a>
-        </p>
-    
-        <p>
-            <strong>Neural Reasoning about Agents' Goals, Preferences, and Actions</strong> <br />
-            <u>M Bortoletto</u>, L Shi, A Bulling <br />
-            <i>AAAI 2024</i>
-            <a href="https://arxiv.org/pdf/2312.07122" title="View Scroll"><i class="fas fa-scroll"></i></a>
-            <a href="assets/posters/AAAI24_poster.pdf" title="View Poster"><i class="fas fa-image"></i></a>
-        </p>
-    
-        <p>
-            <strong>Improving Neural Saliency Prediction with a Cognitive Model of Human Visual Attention</strong> <br />
-            E Sood, L Shi, <u>M Bortoletto</u>, Y Wang, P Müller, A Bulling <br />
-            <i>CogSci 2023</i>
-            <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf" title="View Scroll"><i class="fas fa-scroll"></i></a>
-        </p>
-    
-        <p>
-            <strong>Exploring Natural Language Processing Methods for Interactive Behaviour Modelling</strong> <br />
-            G Zhang, <u>M Bortoletto</u>, Z Hu, L Shi, M Bâce, A Bulling <br />
-            <i>INTERACT 2023</i>
-            <a href="https://arxiv.org/pdf/2303.16039" title="View Scroll"><i class="fas fa-scroll"></i></a>
-        </p>      
+    <p>
+        <strong>Explicit Modelling of Theory of Mind for Belief Prediction in Nonverbal Social Interactions</strong><br />
+        <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling <br />
+        <i>ECAI 2024</i>
+        <a href="https://arxiv.org/pdf/2407.06762" title="View Scroll"><i class="fas fa-scroll"></i></a>
+    <p>
+
+    <p>
+        <strong>The Overcooked Generalisation Challenge</strong> <br />
+        C Ruhdorfer, <u>M Bortoletto</u>, A Penzkofer, A Bulling <br />
+        <i>Preprint</i>
+        <a href="https://arxiv.org/pdf/2406.17949" title="View Scroll"><i class="fas fa-scroll"></i></a>
+    </p>
+
+    <p>
+        <strong>Benchmarking Mental State Representations in Language Models</strong> <br />
+        <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling <br />
+        <i>ICML 2024 Workshop on Mechanistic Interpretability</i>
+        <a href="https://arxiv.org/pdf/2406.17513" title="View Scroll"><i class="fas fa-scroll"></i></a>
+        <a href="assets/posters/poster_ICML.pdf" title="View Poster"><i class="fas fa-image"></i></a>
+    </p>
+
+    <p>
+        <strong>Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition</strong> <br />
+        <u>M Bortoletto</u>, C Ruhdorfer, A Abdessaied, L Shi, A Bulling <br />
+        <i>ACL 2024</i>
+        <a href="https://arxiv.org/pdf/2405.12621" title="View Scroll"><i class="fas fa-scroll"></i></a>
+        <a href="assets/posters/poster_ACL24.pdf" title="View Poster"><i class="fas fa-image"></i></a>
+    </p>
+
+    <p>
+        <strong>Neural Reasoning about Agents' Goals, Preferences, and Actions</strong> <br />
+        <u>M Bortoletto</u>, L Shi, A Bulling <br />
+        <i>AAAI 2024</i>
+        <a href="https://arxiv.org/pdf/2312.07122" title="View Scroll"><i class="fas fa-scroll"></i></a>
+        <a href="assets/posters/AAAI24_poster.pdf" title="View Poster"><i class="fas fa-image"></i></a>
+    </p>
+
+    <p>
+        <strong>Improving Neural Saliency Prediction with a Cognitive Model of Human Visual Attention</strong> <br />
+        E Sood, L Shi, <u>M Bortoletto</u>, Y Wang, P Müller, A Bulling <br />
+        <i>CogSci 2023</i>
+        <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf" title="View Scroll"><i
+                class="fas fa-scroll"></i></a>
+    </p>
+
+    <p>
+        <strong>Exploring Natural Language Processing Methods for Interactive Behaviour Modelling</strong> <br />
+        G Zhang, <u>M Bortoletto</u>, Z Hu, L Shi, M Bâce, A Bulling <br />
+        <i>INTERACT 2023</i>
+        <a href="https://arxiv.org/pdf/2303.16039" title="View Scroll"><i class="fas fa-scroll"></i></a>
+    </p>
 
     <h2>Padawans</h2>
     <p>
-        I regularly supervise Master and Bachelor theses. 
-        If you have an idea for your thesis, feel free to contact me. 
+        I regularly supervise Master and Bachelor theses.
+        If you have an idea for your thesis, feel free to contact me.
         If you are looking for available projects, check if there are Open Thesis Projects <a href="https://www.perceptualui.org/people/bortoletto/">here</a>.
     </p>
 
     <div style="text-align: center;">
-        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e8b59154-c192-4417-888b-f9731b36ae89/daxnkcx-3db57900-9d17-4f68-8323-4bfd7031fc3b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U4YjU5MTU0LWMxOTItNDQxNy04ODhiLWY5NzMxYjM2YWU4OVwvZGF4bmtjeC0zZGI1NzkwMC05ZDE3LTRmNjgtODMyMy00YmZkNzAzMWZjM2IuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.W3zjrny0ezsx5e-uGiQcLQKfQbgHFp-MQqGdzqWM-4g" alt="Sleeping Totoro GIF">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e8b59154-c192-4417-888b-f9731b36ae89/daxnkcx-3db57900-9d17-4f68-8323-4bfd7031fc3b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U4YjU5MTU0LWMxOTItNDQxNy04ODhiLWY5NzMxYjM2YWU4OVwvZGF4bmtjeC0zZGI1NzkwMC05ZDE3LTRmNjgtODMyMy00YmZkNzAzMWZjM2IuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.W3zjrny0ezsx5e-uGiQcLQKfQbgHFp-MQqGdzqWM-4g"
+            alt="Sleeping Totoro GIF">
     </div>
 
 </body>
+
 </html>
