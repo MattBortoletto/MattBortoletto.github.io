@@ -9,11 +9,12 @@
     <link rel="icon" href="assets/icon.png">
     <style>
         body {
-            font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
             color: #333;
             background-color: #f5f5f5;
             line-height: 1.6;
-            margin: 0 auto;
+            margin: 0;
+            padding: 0;
         }
         .container {
             max-width: 800px;
@@ -36,9 +37,7 @@
             gap: 30px;
         }
         .profile-picture-container {
-            flex: 0 0 250px;
-            display: flex;
-            justify-content: center;
+            flex: 0 0 150px;
         }
         .profile-picture {
             width: 150px;
@@ -89,13 +88,24 @@
             background-color: #f9f9f9;
             border-radius: 5px;
         }
-        @media (max-width: 700px) {
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
             .profile-section {
                 flex-direction: column;
                 align-items: center;
+                text-align: center;
+            }
+            .profile-picture-container {
+                margin-bottom: 20px;
             }
             .profile-content {
-                text-align: center;
+                width: 100%;
+            }
+            .profile-links a {
+                display: inline-block;
+                margin: 5px;
             }
         }
     </style>
