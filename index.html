@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta name="google-site-verification" content="MP6E6gPO4pSQa4r4L4m-Xyh1GWSx67nkC-DLpi9Hlhc" />
     <meta charset="UTF-8">
@@ -36,44 +36,9 @@
             background-color: var(--bg-color);
             line-height: 1.6;
             margin: 0 auto;
-        }
-        .container {
             max-width: 700px;
             margin: 0 auto;
             padding: 20px;
-            background-color: var(--bg-color);
-        }
-        .header {
-            /* text-align: center; */
-            font-size: 3em;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        .profile-section {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            gap: 30px;
-        }
-        .profile-picture-container {
-            flex: 0 0 250px;
-            display: flex;
-            justify-content: center;
-        }
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-top: 15px;
-        }
-        .profile-picture img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .profile-content {
-            flex: 1;
         }
         .profile-links a {
             margin-right: 10px;
@@ -107,149 +72,120 @@
         .publication b {
             font-weight: 600;
         }
-        @media (max-width: 700px) {
-            .profile-section {
-                flex-direction: column;
-                align-items: center;
-            }
-            .profile-content {
-                text-align: center;
-            }
-        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Matteo Bortoletto</h1>
-        <section class="profile-section">
-            <div class="profile-content">
-                <p style="color: var(--red-color);">
-                    ❗️I am currently attenting ECAI in Santiago de Compostela, feel free to reach out if you'd like to chat!
-                </p>
-                <p style="text-align: left;">
-                    I am a PhD Student in Computer Science at the University of Stuttgart, Germany, advised by Prof. Andreas Bulling.
-                    My research focuses on computational theory of mind, with a specific emphasis on deep learning approaches.
-                    The ultimate goal is improving human-AI collaboration.<br>
-                    <!-- I hold a BSc and a MSc degree in Physics. During my studies I focused on theoretical physics, in particular theoretical ecology and neuroscience. -->
-                </p>
-                <div class="profile-links">
-                    <a href="assets/contact.txt" title="Mail">[Contact]</a>
-                    <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Scholar">[Google Scholar]</a>
-                    <a href="https://github.com/MattBortoletto" title="GitHub">[GitHub]</a>
-                    <a href="https://twitter.com/MattBorto" title="X">[X]</a>
-                    <a href="https://www.linkedin.com/in/matteo-bortoletto-844609114/" title="Linkedin">[LinkedIn]</a>
-                    <a href="assets/CV.pdf" title="CV">[CV]</a>
-                </div>
-            </div>
-            <!-- <div class="profile-picture">
-                <img src="assets/profile.png" alt="Matteo Bortoletto">
-            </div> -->
-        </section>
+    <h1>Matteo Bortoletto</h1>
+    <p>
+        I am a PhD Student in Computer Science at the University of Stuttgart, Germany, advised by Prof. Andreas Bulling.
+        My research focuses on computational theory of mind, with a specific emphasis on deep learning approaches.
+        The ultimate goal is improving human-AI collaboration.<br>
+        <!-- I hold a BSc and a MSc degree in Physics. During my studies I focused on theoretical physics, in particular theoretical ecology and neuroscience. -->
+    </p>            
+    <div class="profile-links">
+        <a href="assets/contact.txt" title="Mail">[Contact]</a>
+        <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" title="Scholar">[Google Scholar]</a>
+        <a href="https://github.com/MattBortoletto" title="GitHub">[GitHub]</a>
+        <a href="https://twitter.com/MattBorto" title="X">[X]</a>
+        <a href="https://www.linkedin.com/in/matteo-bortoletto-844609114/" title="Linkedin">[LinkedIn]</a>
+        <a href="assets/CV.pdf" title="CV">[CV]</a>
+    </div>
 
-        <section>
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Designing and assessing AI models for theory of mind tasks that span multiple modalities, including vision and natural language</li>
-                <li>Probing and manipulating LLMs' internal representations of mental states</li>
-                <li>Causal models for planning using theory of mind</li>
-                <li>Learning theory of mind through world models</li>
-            </ul>
-            <p>
-                I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarize every new paper involving theory of mind and LLMs.
-            </p>
-        </section>
+    <h2>Research Interests</h2>
+    <ul>
+        <li>Designing and assessing AI models for theory of mind tasks that span multiple modalities, including vision and natural language</li>
+        <li>Probing and manipulating LLMs' internal representations of mental states</li>
+        <li>Causal models for planning using theory of mind</li>
+        <li>Learning theory of mind through world models</li>
+    </ul>
+    <p>
+        I maintain a <a href="https://graceful-cellar-cad.notion.site/ToM-in-LLMs-e9e7ee3ddd53435f87c1fdbe10b879c0?pvs=4">page</a> where I summarize every new paper involving theory of mind and LLMs.
+    </p>
 
-        <section>
-            <h2>News</h2>
-            <div>[01.10.2024] 📑 Reviewing for CHI 2025</div>
-            <div>[10.07.2024] 🏅 I have been selected as volunteer for ACL 2024</div>
-            <div>[04.07.2024] 🔥 Paper accepted at ECAI 2024 (Santiago de Compostela, Spain)
-            <div>[24.06.2024] 🔥 Paper accepted at ICML 2024 <a href="https://icml2024mi.pages.dev"> Workshop on Mechanistic
-                    Interpretability</a> (Vienna, Austria)</div>
-            <div>[16.05.2024] 🔥 Paper accepted at ACL 2024 (Bangkok, Thailand)</div>
-            <div>[01.05.2024] ☀️ I got accepted at the <a href="assets/cogenai-certificate.pdf"> CoGenAI Summer School</a>
-                (Aalto University, Finland)</div>
-            <div>[25.03.2024] 👨🏼‍🏫 Constantin Ruhdorfer, Anna Penzkofer and I are organising a new course titled
-                “Computational Theory of Mind and Cognition”</div>
-            <div>[01.03.2024] 🏆 My student Constantin Ruhdorfer's master's thesis was awarded the Rul Gunzenhäuser Award
-            </div>
-            <div>[18.12.2023] 🏅 I have been selected as <a href="assets/VolunteerCertificateAAAI24.pdf">volunteer for AAAI
-                    2024</a></div>
-            <div>[09.12.2023] 🔥 Paper accepted at AAAI 2024 (Vancouver, Canada)</div>
-            <div>[29.09.2023] 📑 Reviewing for CHI 2024</div>
-            <div>[07.04.2023] 🔥 Paper accepted at CogSci 2023 (Sydney, Australia)</div>
-            <div>[27.03.2023] 🔥 Paper accepted at INTERACT 2023 (York, UK)</div>
-        </section>
+    <h2>News</h2>
+    <div>[01.10.2024] 📑 Reviewing for CHI 2025</div>
+    <div>[10.07.2024] 🏅 I have been selected as volunteer for ACL 2024</div>
+    <div>[04.07.2024] 🔥 Paper accepted at ECAI 2024 (Santiago de Compostela, Spain)
+    <div>[24.06.2024] 🔥 Paper accepted at ICML 2024 <a href="https://icml2024mi.pages.dev"> Workshop on Mechanistic
+            Interpretability</a> (Vienna, Austria)</div>
+    <div>[16.05.2024] 🔥 Paper accepted at ACL 2024 (Bangkok, Thailand)</div>
+    <div>[01.05.2024] ☀️ I got accepted at the <a href="assets/cogenai-certificate.pdf"> CoGenAI Summer School</a>
+        (Aalto University, Finland)</div>
+    <div>[25.03.2024] 👨🏼‍🏫 Constantin Ruhdorfer, Anna Penzkofer and I are organising a new course titled
+        “Computational Theory of Mind and Cognition”</div>
+    <div>[01.03.2024] 🏆 My student Constantin Ruhdorfer's master's thesis was awarded the Rul Gunzenhäuser Award
+    </div>
+    <div>[18.12.2023] 🏅 I have been selected as <a href="assets/VolunteerCertificateAAAI24.pdf">volunteer for AAAI
+            2024</a></div>
+    <div>[09.12.2023] 🔥 Paper accepted at AAAI 2024 (Vancouver, Canada)</div>
+    <div>[29.09.2023] 📑 Reviewing for CHI 2024</div>
+    <div>[07.04.2023] 🔥 Paper accepted at CogSci 2023 (Sydney, Australia)</div>
+    <div>[27.03.2023] 🔥 Paper accepted at INTERACT 2023 (York, UK)</div>
 
-        <section>
-            <h2>Publications</h2>
-            <h3>Peer Reviewed</h3>
-            <div class="publication">
-                <b>Explicit Modelling of Theory of Mind for Belief Prediction in Nonverbal Social Interactions</b><br>
-                <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling<br>
-                <i>ECAI 2024 (Oral)</i>
-                <a href="https://arxiv.org/pdf/2407.06762">[Paper]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/mtomnet">[Project]</a>
-            </div>
-            <div class="publication">
-                <b>Benchmarking Mental State Representations in Language Models</b> <br />
-                <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling <br />
-                <i>ICML 2024 Workshop on Mechanistic Interpretability</i>
-                <a href="https://arxiv.org/pdf/2406.17513">[Paper]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/mental-states-in-LMs">[Project]</a>
-                <a href="assets/posters/poster_ICML.pdf">[Poster]</a>
-            </div>
-            <div class="publication">
-                <b>Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition</b> <br />
-                <u>M Bortoletto</u>, C Ruhdorfer, A Abdessaied, L Shi, A Bulling <br />
-                <i>ACL 2024</i>
-                <a href="https://arxiv.org/pdf/2405.12621">[Paper]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/limits-of-tom">[Project]</a>
-                <a href="assets/posters/poster_ACL24.pdf">[Poster]</a>
-            </div>
-            <div class="publication">
-                <b>Neural Reasoning about Agents' Goals, Preferences, and Actions</b> <br />
-                <u>M Bortoletto</u>, L Shi, A Bulling <br />
-                <i>AAAI 2024</i>
-                <a href="https://arxiv.org/pdf/2312.07122">[Paper]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/IRENE">[Project]</a>
-                <a href="assets/posters/AAAI24_poster.pdf">[Poster]</a>
-            </div>
-            <div class="publication">
-                <b>Improving Neural Saliency Prediction with a Cognitive Model of Human Visual Attention</b> <br />
-                E Sood, L Shi, <u>M Bortoletto</u>, Y Wang, P Müller, A Bulling <br />
-                <i>CogSci 2023</i>
-                <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf">[Paper]</a>
-            </div>
-            <div class="publication">
-                <b>Exploring Natural Language Processing Methods for Interactive Behaviour Modelling</b> <br />
-                G Zhang, <u>M Bortoletto</u>, Z Hu, L Shi, M Bâce, A Bulling <br />
-                <i>INTERACT 2023</i>
-                <a href="https://arxiv.org/pdf/2303.16039">[Paper]</a>
-            </div>
-            <h3>Preprints</h3>
-            <div class="publication">
-                <b>The Overcooked Generalisation Challenge</b><br>
-                C Ruhdorfer, <u>M Bortoletto</u>, A Penzkofer, A Bulling<br>
-                <i>arXiv:2406.17949</i>
-                <a href="https://arxiv.org/pdf/2406.17949">[Paper]</a>
-            </div>
-        </section>
+    <h2>Publications</h2>
+    <h3>Peer Reviewed</h3>
+    <div class="publication">
+        <b>Explicit Modelling of Theory of Mind for Belief Prediction in Nonverbal Social Interactions</b><br>
+        <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling<br>
+        <i>ECAI 2024 (Oral)</i>
+        <a href="https://arxiv.org/pdf/2407.06762">[Paper]</a>
+        <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/mtomnet">[Project]</a>
+    </div>
+    <div class="publication">
+        <b>Benchmarking Mental State Representations in Language Models</b> <br />
+        <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling <br />
+        <i>ICML 2024 Workshop on Mechanistic Interpretability</i>
+        <a href="https://arxiv.org/pdf/2406.17513">[Paper]</a>
+        <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/mental-states-in-LMs">[Project]</a>
+        <a href="assets/posters/poster_ICML.pdf">[Poster]</a>
+    </div>
+    <div class="publication">
+        <b>Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition</b> <br />
+        <u>M Bortoletto</u>, C Ruhdorfer, A Abdessaied, L Shi, A Bulling <br />
+        <i>ACL 2024</i>
+        <a href="https://arxiv.org/pdf/2405.12621">[Paper]</a>
+        <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/limits-of-tom">[Project]</a>
+        <a href="assets/posters/poster_ACL24.pdf">[Poster]</a>
+    </div>
+    <div class="publication">
+        <b>Neural Reasoning about Agents' Goals, Preferences, and Actions</b> <br />
+        <u>M Bortoletto</u>, L Shi, A Bulling <br />
+        <i>AAAI 2024</i>
+        <a href="https://arxiv.org/pdf/2312.07122">[Paper]</a>
+        <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/IRENE">[Project]</a>
+        <a href="assets/posters/AAAI24_poster.pdf">[Poster]</a>
+    </div>
+    <div class="publication">
+        <b>Improving Neural Saliency Prediction with a Cognitive Model of Human Visual Attention</b> <br />
+        E Sood, L Shi, <u>M Bortoletto</u>, Y Wang, P Müller, A Bulling <br />
+        <i>CogSci 2023</i>
+        <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf">[Paper]</a>
+    </div>
+    <div class="publication">
+        <b>Exploring Natural Language Processing Methods for Interactive Behaviour Modelling</b> <br />
+        G Zhang, <u>M Bortoletto</u>, Z Hu, L Shi, M Bâce, A Bulling <br />
+        <i>INTERACT 2023</i>
+        <a href="https://arxiv.org/pdf/2303.16039">[Paper]</a>
+    </div>
+    <h3>Preprints</h3>
+    <div class="publication">
+        <b>The Overcooked Generalisation Challenge</b><br>
+        C Ruhdorfer, <u>M Bortoletto</u>, A Penzkofer, A Bulling<br>
+        <i>arXiv:2406.17949</i>
+        <a href="https://arxiv.org/pdf/2406.17949">[Paper]</a>
+    </div>
 
-        <section>
-            <h2>Students</h2>
-            <p>
-                I regularly supervise Master and Bachelor theses.
-                If you have an idea for your thesis, feel free to contact me.
-                If you are looking for available projects, check if there are Open Thesis Projects <a href="https://www.perceptualui.org/people/bortoletto/">here</a>.
-            </p>
-        </section>
+    <h2>Students</h2>
+    <p>
+        I regularly supervise Master and Bachelor theses.
+        If you have an idea for your thesis, feel free to contact me.
+        If you are looking for available projects, check if there are Open Thesis Projects <a href="https://www.perceptualui.org/people/bortoletto/">here</a>.
+    </p>
 
-        <div style="text-align: center;">
-            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e8b59154-c192-4417-888b-f9731b36ae89/daxnkcx-3db57900-9d17-4f68-8323-4bfd7031fc3b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U4YjU5MTU0LWMxOTItNDQxNy04ODhiLWY5NzMxYjM2YWU4OVwvZGF4bmtjeC0zZGI1NzkwMC05ZDE3LTRmNjgtODMyMy00YmZkNzAzMWZjM2IuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.W3zjrny0ezsx5e-uGiQcLQKfQbgHFp-MQqGdzqWM-4g"
-                alt="Sleeping Totoro GIF">
-        </div>
+    <div style="text-align: center;">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e8b59154-c192-4417-888b-f9731b36ae89/daxnkcx-3db57900-9d17-4f68-8323-4bfd7031fc3b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U4YjU5MTU0LWMxOTItNDQxNy04ODhiLWY5NzMxYjM2YWU4OVwvZGF4bmtjeC0zZGI1NzkwMC05ZDE3LTRmNjgtODMyMy00YmZkNzAzMWZjM2IuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.W3zjrny0ezsx5e-uGiQcLQKfQbgHFp-MQqGdzqWM-4g"
+            alt="Sleeping Totoro GIF">
     </div>
 </body>
 
