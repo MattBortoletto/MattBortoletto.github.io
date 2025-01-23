@@ -1,0 +1,61 @@
+:root {
+--text-color: #141413;
+--bg-color: #f0efea;
+--hl-color: #6c6aef; 
+--red-color: #bf4d43;
+}
+body {
+    font-family: "Palatino", serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.profile-links a {
+    margin-right: 10px;
+}
+h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+h2 {
+    font-weight: 600;
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+h3 {
+    font-weight: 500;
+}
+ul {
+    padding-left: 20px;
+}
+a {
+    color: var(--hl-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline; 
+}
+.publication {
+    margin-bottom: 15px;
+}
+.publication b {
+    font-weight: 600;
+}
+.quote-container {
+    width: 70%;
+    text-align: justify;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-left: auto;
+}
+.book-title {
+    margin-top: -15px;
+    text-align: right;
+}
