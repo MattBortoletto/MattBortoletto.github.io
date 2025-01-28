@@ -39,9 +39,6 @@ a {
     color: var(--hl-color);
     text-decoration: none;
 }
-a:hover {
-    text-decoration: underline; 
-}
 .publication {
     margin-bottom: 15px;
 }
