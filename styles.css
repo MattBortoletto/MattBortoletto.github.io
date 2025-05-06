@@ -5,7 +5,7 @@
 --red-color: #bf4d43;
 }
 body {
-    font-family: "Palatino", serif;
+    font-family: serif;
     font-size: 18px;
     font-weight: 400;
     color: var(--text-color);
