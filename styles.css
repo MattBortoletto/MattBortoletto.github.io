@@ -5,8 +5,7 @@
 --red-color: #bf4d43;
 }
 body {
-    font-family: serif;
-    font-size: 18px;
+    font-family: "Lato", sans-serif;
     font-weight: 400;
     color: var(--text-color);
     background-color: var(--bg-color);
