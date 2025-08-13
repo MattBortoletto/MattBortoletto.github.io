@@ -184,12 +184,16 @@
           <div class="content">
             <h2 class="title is-3">Problem Formulation</h2>
             <p>
-              We consider an AI facilitator as an omniscient observer that provides feedback to <em>n</em> interacting agents with the goal of promoting prosocial behaviour. In the most general case, this setting can be formalised as a two-level POMDP: 
-              <ol>
-                <li>Inner agents play a partially-observable game with their own goals.</li>
-                <li>The outer assistant plays a POMDP whose hidden component is the observed agents' internal state, and whose only available action is the feedback communication.</li>
-              </ol>
-              Given an observed trajectory the AI facilitator must decide whether to communicate feedback, and if so, which feedback to communicate.
+              We consider an AI facilitator as an omniscient observer that provides feedback to <em>n</em> interacting
+              agents with the goal of promoting prosocial behaviour. In the most general case, this setting can be
+              formalised as a two-level POMDP:
+            <ol>
+              <li>Inner agents play a partially-observable game with their own goals.</li>
+              <li>The outer assistant plays a POMDP whose hidden component is the observed agents' internal state, and
+                whose only available action is the feedback communication.</li>
+            </ol>
+            Given an observed trajectory the AI facilitator must decide whether to communicate feedback, and if so,
+            which feedback to communicate.
             </p>
           </div>
         </div>
@@ -208,20 +212,28 @@
                 style="max-width: 100%; height: auto;" />
             </p>
             <p>
-              ProToM actively assists both agents in an environment by observing their actions, inferring their goals, and providing feedback when it is expected to improve prosocial behaviour.
+              ProToM actively assists both agents in an environment by observing their actions, inferring their goals,
+              and providing feedback when it is expected to improve prosocial behaviour.
             </p>
             <h3>Maintaining Beliefs About Agents</h3>
             <p>
-              To simulate and interpret the behaviour of agents, ProToM maintains a dynamic belief distribution for each agent, capturing both their internal belief about the environment and their underlying goal. This belief distribution is approximated using a particle filter with <em>N</em> particles per agent, and the agents' goal distribution is computed using Bayesian inverse planning.
+              To simulate and interpret the behaviour of agents, ProToM maintains a dynamic belief distribution for each
+              agent, capturing both their internal belief about the environment and their underlying goal. This belief
+              distribution is approximated using a particle filter with <em>N</em> particles per agent, and the agents'
+              goal distribution is computed using Bayesian inverse planning.
             </p>
             <h3>Feedback Selection</h3>
             <p>
-              Given a finite set of candidate feedback messages, ProToM performs feedback selection in three steps. 
-              <ol>
-                <li>First, it evaluates each candidate feedback message by computing its expected utility, conditioned on the inferred goals and belief states of the agents.</li>
-                <li>Second, ProToM decides whether to issue new feedback by comparing the expected utility of the best candidate against a threshold and estimating the divergence between the agent's predicted behaviour with and without the feedback.</li>
-                <li>Finally, if a feedback message is selected, ProToM generates a corresponding explanation to help the agent understand the reasoning behind the suggestion.</li>
-              </ol>
+              Given a finite set of candidate feedback messages, ProToM performs feedback selection in three steps.
+            <ol>
+              <li>First, it evaluates each candidate feedback message by computing its expected utility, conditioned on
+                the inferred goals and belief states of the agents.</li>
+              <li>Second, ProToM decides whether to issue new feedback by comparing the expected utility of the best
+                candidate against a threshold and estimating the divergence between the agent's predicted behaviour with
+                and without the feedback.</li>
+              <li>Finally, if a feedback message is selected, ProToM generates a corresponding explanation to help the
+                agent understand the reasoning behind the suggestion.</li>
+            </ol>
             </p>
           </div>
           </p>
@@ -242,14 +254,16 @@
                 class="blend-img-background center-image" style="max-width: 100%; height: auto;" />
             </p>
             <p>
-              Compared to the baselines, <b>ProToM achieves higher success rates and task speedups, with reduced communication overhead</b>.
+              Compared to the baselines, <b>ProToM achieves higher success rates and task speedups, with reduced
+                communication overhead</b>.
             </p>
             <p style="text-align: center;">
-              <img src="static/images/human-results.png" alt="human-results"
-                class="blend-img-background center-image" style="max-width: 70%; height: auto;" />
+              <img src="static/images/human-results.png" alt="human-results" class="blend-img-background center-image"
+                style="max-width: 70%; height: auto;" />
             </p>
             <p>
-              Our human study also showed that <b>ProToM's feedback was perceived as more helpful, appropriate, and better explained and aligned with users' goals</b>.
+              Our human study also showed that <b>ProToM's feedback was perceived as more helpful, appropriate, and
+                better explained and aligned with users' goals</b>.
             </p>
           </div>
         </div>
@@ -257,27 +271,39 @@
     </div>
   </section>
 
-  <section class="section hero is-small">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full">
-          <div class="content">
-            <h2 class="title is-3">Example Scenarios</h2>
-            <!-- <p>
-              <img src="static/images/model.png" alt="ProToM-overview"
-                class="blend-img-background center-image" style="max-width: 100%; height: auto;" />
-            </p> -->
-            <p>
-              text text text text text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text text text text text
-            </p>
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <div class="item" style="display: flex; justify-content: center; align-items: center;">
+            <img src="static/gifs/13-oc-protom.gif" alt="example1" style="height: 600px; width: auto;">
           </div>
+
+          <div class="item" style="display: flex; justify-content: center; align-items: center;">
+            <img src="static/gifs/28-oc-protom.gif" alt="example2" style="height: 600px; width: auto;">
+          </div>
+
+          <div class="item" style="display: flex; justify-content: center; align-items: center;">
+            <img src="static/gifs/26-oc-protom.gif" alt="example3" style="height: 600px; width: auto;">
+          </div>
+
+          <div class="item" style="display: flex; justify-content: center; align-items: center;">
+            <img src="static/gifs/2-mdkg-protom.gif" alt="example4" style="height: 600px; width: auto;">
+          </div>
+
+          <div class="item" style="display: flex; justify-content: center; align-items: center;">
+            <img src="static/gifs/8-mdkg-protom.gif" alt="example5" style="height: 600px; width: auto;">
+          </div>
+
         </div>
       </div>
     </div>
   </section>
+
+  <!-- End image carousel -->
+
 
   <!--BibTex citation -->
   <section class="section" id="BibTeX">
