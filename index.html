@@ -122,9 +122,94 @@
             width: auto;
             height: 250px;
         }
+        #theme-toggle {
+            /* Lock the button relative to the viewport */
+            position: fixed;
+            top: var(--spacing); /* Place it down from the top edge */
+            right: var(--spacing); /* Place it in from the right edge */
+            z-index: 1000; /* Ensure it stays above other content */
+            /* Existing button styles (adjusted slightly) */
+            font-family: var(--font);
+            background: var(--color-bg);
+            color: var(--color-text);
+            border: 1px solid var(--color-text);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        #theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .dark-mode #theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        #theme-toggle-container {
+            position: fixed;
+            top: var(--spacing); /* Place it down from the top edge */
+            right: var(--spacing); /* Place it in from the right edge */
+            z-index: 1000;
+        }
+        /* The actual toggle switch container */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px; /* Width of the switch body */
+            height: 24px; /* Height of the switch body */
+        }
+        /* Hide the default HTML checkbox */
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        /* The slider visually */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc; /* Light theme: grey off-state */
+            transition: 0.4s;
+            border-radius: 24px; /* Rounded pill shape */
+        }
+        /* Change slider color when checked (Dark Mode ON) */
+        input:checked + .slider {
+            background-color: var(--color-accent); /* Accent color when ON */
+        }
+        /* The round knob (the "sun/moon") */
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px; /* Size of the knob */
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white; /* Knob color */
+            transition: 0.4s;
+            border-radius: 50%; /* Perfect circle */
+        }
+        /* Move the knob when checked (Dark Mode ON) */
+        input:checked + .slider:before {
+            transform: translateX(26px); /* Move knob right (60px width - 26px knob - 4px*2 padding = 26px travel) */
+        }
+        .dark-mode {
+            --color-text: #eee;
+            --color-bg: #1e1e1e;
+            --color-accent: #a3a1ff;
+        }
     </style>
 </head>
 <body>
+    <!-- <button id="theme-toggle">Dark</button> -->
+    <div id="theme-toggle-container">
+        <label class="toggle-switch">
+            <input type="checkbox" id="theme-slider">
+            <span class="slider"></span>
+        </label>
+    </div>
     <div class="container">
         <header>
             <h1>Matteo Bortoletto</h1>
@@ -304,6 +389,8 @@
     <script>
         const buttons = document.querySelectorAll('.tab-btn');
         const contents = document.querySelectorAll('.tab-content');
+
+        // --- Tab Switching Logic (Original) ---
         buttons.forEach(btn => {
             btn.addEventListener('click', () => {
                 buttons.forEach(b => b.classList.remove('active'));
@@ -312,6 +399,42 @@
                 document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
             });
         });
+
+        // --- Theme Toggle Logic (Revised for Slider) ---
+        const themeSlider = document.getElementById('theme-slider');
+        const body = document.body;
+
+        // Function to apply the theme state
+        function setThemeState(isDark) {
+            if (isDark) {
+                body.classList.add('dark-mode');
+                themeSlider.checked = true;
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                themeSlider.checked = false;
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // A. Initial Setup: Read saved preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Determine the initial state based on saved preference or system preference
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            setThemeState(true); // Initial state is Dark
+        } else {
+            setThemeState(false); // Initial state is Light (or saved light)
+        }
+
+        // B. Event Listener: Handle the click (change event for checkbox)
+        themeSlider.addEventListener('change', (event) => {
+            // The checked state directly tells us the desired mode
+            setThemeState(event.target.checked);
+        });
+
+        console.log('Theme slider script loaded and initialized.');
     </script>
 </body>
 
