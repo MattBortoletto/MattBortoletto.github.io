@@ -79,7 +79,11 @@
       transform: translateY(6px);
       animation: fadeUp 0.45s ease forwards;
     }
-    .row--header { margin-bottom: 2.4rem; animation-delay: 0s; }
+    .row--header {
+      grid-template-columns: var(--col-left) 1fr auto;
+      margin-bottom: 2.4rem;
+      animation-delay: 0s;
+    }
     .row--body   { animation-delay: 0.07s; }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
@@ -175,11 +179,6 @@
     /* Contact */
     .contact-body { display: flex; flex-direction: column; gap: 0.6rem; }
 
-    #toggle-wrap {
-      position: fixed;
-      top: 1.6rem; right: 2rem;
-      z-index: 1000;
-    }
     #theme-btn {
       font-family: var(--font);
       font-size: var(--font-size);
@@ -193,21 +192,19 @@
 
     @media (max-width: 580px) {
       .row { grid-template-columns: 1fr; gap: 0.8rem; }
-      .row--header { margin-bottom: 1.4rem; }
+      .row--header { grid-template-columns: 1fr auto; margin-bottom: 1.4rem; }
+      .row--header > div:nth-child(2) { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <div id="toggle-wrap">
-    <button id="theme-btn">light</button>
-  </div>
-
   <main class="layout">
 
     <div class="row row--header">
       <div class="site-title">Matteo Bortoletto</div>
-
+      <div></div>
+      <button id="theme-btn"></button>
     </div>
 
     <div class="row row--body">
