@@ -1,460 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="MP6E6gPO4pSQa4r4L4m-Xyh1GWSx67nkC-DLpi9Hlhc" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Matteo Bortoletto</title>
-    <style>
-        @font-face {
-          font-family: 'Favorit';
-          font-weight: 400;
-          font-style: normal;
-          src: url('https://files.cargocollective.com/c46947/Favorit-Regular.woff2') format('woff2'),
-               url('https://files.cargocollective.com/c46947/Favorit-Regular.woff') format('woff');
-        }
-        @font-face {
-          font-family: 'Favorit';
-          font-weight: 400;
-          font-style: italic;
-          src: url('https://files.cargocollective.com/c46947/Favorit-RegularIta.woff2') format('woff2'),
-                   url('https://files.cargocollective.com/c46947/Favorit-RegularIta.woff') format('woff');
-        }
-        @font-face {
-          font-family: 'Favorit';
-          font-weight: 800;
-          font-style: normal;
-          src: url('https://files.cargocollective.com/c46947/Favorit-Bold.woff2') format('woff2'),
-                   url('https://files.cargocollective.com/c46947/Favorit-Bold.woff') format('woff');
-        }
-        @font-face {
-          font-family: 'Favorit Mono';
-          font-weight: 400;
-          font-style: normal;
-          src: url('https://files.cargocollective.com/c46947/Favorit-RegularLining.eot'); 
-          src: url('https://files.cargocollective.com/c46947/Favorit-RegularLining.eot?#iefix') format('embedded-opentype'),
-               url('https://files.cargocollective.com/c46947/FavoritMono-Regular.woff2') format('woff2'),
-               url('https://files.cargocollective.com/c46947/FavoritMono-Regular.woff') format('woff');
-        }
-        :root {
-            --font: "Favorit", sans-serif;
-            --spacing: 1rem;
-            --line-height: 1.5;
-            --max-width: 42rem;
-            --color-text: #222;
-            --color-accent: #6c6aef;
-            --color-bg: rgb(252,252,252);
-            /* --color-bg: #fff; */
-        }
-        body {
-            font-family: var(--font);
-            color: var(--color-text);
-            background: var(--color-bg);
-            display: flex;
-            justify-content: center;
-            padding: var(--spacing);
-        }
-        .container {
-            max-width: var(--max-width);
-            width: 100%;
-            padding: var(--spacing);
-            border-radius: 8px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: var(--spacing);
-        }
-        header h1 {
-            margin-bottom: 0.5rem;
-        }
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: var(--spacing);
-        }
-        .tabs button {
-            font-family: var(--font);
-            background: none;
-            border: none;
-            padding: 0.5rem 0;
-            font-size: 1rem;
-            color: var(--color-text);
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: border-color 0.3s;
-        }
-        .tabs button.active {
-            border-color: var(--color-accent);
-            color: var(--color-accent);
-            font-weight: bold;
-        }
-        .tab-content {
-            display: none;
-            line-height: var(--line-height);
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .tab-content h2 {
-            margin-bottom: 1rem;
-        }
-        .tab-content p {
-            margin-bottom: 1rem;
-        }
-        .tab-content ul {
-            padding-left: 1.5rem;
-            list-style-position: outside;
-            margin-bottom: 1rem;
-        }
-        .tab-content ul li {
-            margin-bottom: 0.5rem;
-        }
-        a {
-            color: var(--color-accent);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .publication {
-            margin-bottom: 15px;
-        }
-        .profile-pic-container {
-            text-align: center;
-        }
-        .profile-pic {
-            width: auto;
-            height: 250px;
-        }
-        #theme-toggle {
-            /* Lock the button relative to the viewport */
-            position: fixed;
-            top: var(--spacing); /* Place it down from the top edge */
-            right: var(--spacing); /* Place it in from the right edge */
-            z-index: 1000; /* Ensure it stays above other content */
-            /* Existing button styles (adjusted slightly) */
-            font-family: var(--font);
-            background: var(--color-bg);
-            color: var(--color-text);
-            border: 1px solid var(--color-text);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        #theme-toggle:hover {
-            background: rgba(0, 0, 0, 0.05);
-        }
-        .dark-mode #theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        #theme-toggle-container {
-            position: absolute;
-            top: var(--spacing); /* Place it down from the top edge */
-            right: var(--spacing); /* Place it in from the right edge */
-            z-index: 1000;
-        }
-        /* The actual toggle switch container */
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 50px; /* Width of the switch body */
-            height: 24px; /* Height of the switch body */
-        }
-        /* Hide the default HTML checkbox */
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        /* The slider visually */
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc; /* Light theme: grey off-state */
-            transition: 0.4s;
-            border-radius: 24px; /* Rounded pill shape */
-        }
-        /* Change slider color when checked (Dark Mode ON) */
-        input:checked + .slider {
-            background-color: var(--color-accent); /* Accent color when ON */
-        }
-        /* The round knob (the "sun/moon") */
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 16px; /* Size of the knob */
-            width: 16px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white; /* Knob color */
-            transition: 0.4s;
-            border-radius: 50%; /* Perfect circle */
-        }
-        /* Move the knob when checked (Dark Mode ON) */
-        input:checked + .slider:before {
-            transform: translateX(26px); /* Move knob right (60px width - 26px knob - 4px*2 padding = 26px travel) */
-        }
-        .dark-mode {
-            --color-text: rgb(209, 209, 209);
-            --color-bg: rgb(23, 23, 23);
-            --color-accent: #a3a1ff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matteo Bortoletto</title>
+  <style>
+    @font-face {
+      font-family: 'Favorit';
+      font-weight: 400; font-style: normal;
+      src: url('https://files.cargocollective.com/c46947/Favorit-Regular.woff2') format('woff2'),
+           url('https://files.cargocollective.com/c46947/Favorit-Regular.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Favorit';
+      font-weight: 400; font-style: italic;
+      src: url('https://files.cargocollective.com/c46947/Favorit-RegularIta.woff2') format('woff2'),
+           url('https://files.cargocollective.com/c46947/Favorit-RegularIta.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Favorit';
+      font-weight: 800; font-style: normal;
+      src: url('https://files.cargocollective.com/c46947/Favorit-Bold.woff2') format('woff2'),
+           url('https://files.cargocollective.com/c46947/Favorit-Bold.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Favorit Mono';
+      font-weight: 400; font-style: normal;
+      src: url('https://files.cargocollective.com/c46947/FavoritMono-Regular.woff2') format('woff2'),
+           url('https://files.cargocollective.com/c46947/FavoritMono-Regular.woff') format('woff');
+    }
+
+    :root {
+      --font: "Favorit", sans-serif;
+      --font-mono: "Favorit Mono", monospace;
+      --font-size: 0.9rem;
+      --line-height: 1.6;
+      --max-width: 56rem;
+      --col-left: 13rem;
+      --gutter: 3rem;
+      --spacing: 1rem;
+      --color-text: #1a1a1a;
+      --color-accent: #6c6aef;
+      --color-muted: #888;
+      --color-bg: rgb(252,252,252);
+      --color-border: rgba(128,128,128,0.15);
+    }
+    .dark-mode {
+      --color-text: rgb(209,209,209);
+      --color-bg: rgb(23,23,23);
+      --color-accent: #a3a1ff;
+      --color-border: rgba(255,255,255,0.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      font-size: var(--font-size);
+      line-height: var(--line-height);
+      color: var(--color-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .layout {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.2rem 2rem 5rem;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: var(--col-left) 1fr;
+      gap: 0 var(--gutter);
+      opacity: 0;
+      transform: translateY(6px);
+      animation: fadeUp 0.45s ease forwards;
+    }
+    .row--header { margin-bottom: 2.4rem; animation-delay: 0s; }
+    .row--body   { animation-delay: 0.07s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    .site-title {
+      font-weight: 800;
+      font-size: var(--font-size);
+      letter-spacing: -0.01em;
+    }
+    .site-subtitle {
+      font-family: var(--font-mono);
+      font-style: italic;
+    }
+
+    nav { display: flex; flex-direction: column; }
+    .nav-group { display: flex; flex-direction: column; margin-bottom: 0.7rem; }
+    .nav-group:last-child { margin-bottom: 0; }
+
+    .nav-link {
+      display: inline-block;
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 400;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: var(--font-size);
+      padding: 0;
+      text-align: left;
+      line-height: 1.7;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 1px; left: 0;
+      width: 0; height: 1px;
+      background: var(--color-text);
+      transition: width 0.2s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { font-weight: 800; }
+    .ext-link::after { display: none; }
+    .ext-link:hover { text-decoration: underline; }
+
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Panels */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* About */
+    .about-body { display: flex; flex-direction: column; gap: 0.85rem; }
+
+    /* Research */
+    .section-label {
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+    .section-sublabel {
+      font-weight: 400;
+      color: var(--color-muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin: 1.4rem 0 0.7rem;
+    }
+    .interests-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.6rem;
+    }
+    .interests-list li { padding-left: 1rem; position: relative; }
+    .interests-list li::before { content: '—'; position: absolute; left: 0; color: var(--color-muted); }
+
+    .pub {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .pub:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .pub-title { font-weight: 800; margin-bottom: 0.12rem; }
+    .pub-authors { color: var(--color-muted); font-size: 0.84rem; margin-bottom: 0.12rem; }
+    .pub-venue { font-style: italic; font-size: 0.84rem; margin-bottom: 0.3rem; }
+    .pub-links { display: flex; gap: 0.55rem; flex-wrap: wrap; }
+    .pub-links a { font-size: 0.82rem; }
+
+    /* Contact */
+    .contact-body { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    /* Theme toggle */
+    #toggle-wrap {
+      position: fixed;
+      top: var(--spacing); right: var(--spacing);
+      z-index: 1000;
+    }
+    .toggle-switch { position: relative; display: inline-block; width: 44px; height: 22px; }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; cursor: pointer;
+      inset: 0;
+      background: #ccc;
+      border-radius: 22px;
+      transition: 0.3s;
+    }
+    input:checked + .slider { background: var(--color-accent); }
+    .slider::before {
+      content: "";
+      position: absolute;
+      width: 14px; height: 14px;
+      left: 4px; bottom: 4px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    input:checked + .slider::before { transform: translateX(22px); }
+
+    @media (max-width: 580px) {
+      .row { grid-template-columns: 1fr; gap: 0.8rem; }
+      .row--header { margin-bottom: 1.4rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- <button id="theme-toggle">Dark</button> -->
-    <div id="theme-toggle-container">
-        <label class="toggle-switch">
-            <input type="checkbox" id="theme-slider">
-            <span class="slider"></span>
-        </label>
+
+  <div id="toggle-wrap">
+    <label class="toggle-switch">
+      <input type="checkbox" id="theme-slider">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <main class="layout">
+
+    <div class="row row--header">
+      <div class="site-title">Matteo Bortoletto</div>
+
     </div>
-    <div class="container">
-        <header>
-            <h1>Matteo Bortoletto</h1>
-        </header>
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="about">About</button>
-            <!-- <button class="tab-btn" data-tab="news">News</button> -->
-            <button class="tab-btn" data-tab="pubs">Research</button>
-            <button class="tab-btn" data-tab="contact">Contact</button>
+
+    <div class="row row--body">
+
+      <nav>
+        <div class="nav-group">
+          <button class="nav-link active" data-tab="about">About</button>
+          <button class="nav-link" data-tab="research">Research</button>
+          <button class="nav-link" data-tab="contact">Contact</button>
         </div>
-        <div id="about" class="tab-content active">
-            <h2>About</h2>
-            <!-- <div class="profile-pic-container">
-                <img src="assets/matteo_watercolor.png" alt="Profile Picture" class="profile-pic">
-            </div> -->
-            <p>
-            I'm a Research Engineer at <a href="https://www.kapa.ai/" target="_blank" rel="noopener noreferrer">kapa.ai</a> (YC S23). 
-            </p>
-            <p>
-            I'm also a PhD candidate in the <a href="https://www.collaborative-ai.org" target="_blank" rel="noopener noreferrer">Collaborative AI</a> 
-            group at the <b>University of Stuttgart</b>, advised by Prof. <a href="https://www.collaborative-ai.org/people/bulling/" target="_blank" rel="noopener noreferrer">Andreas Bulling</a>,
-            where my research focused on <a href="https://en.wikipedia.org/wiki/Theory_of_mind" target="_blank" rel="noopener noreferrer"><i>theory of mind</i></a> in AI. 
-            <!-- My core research lies at the intersection of artificial intelligence and social cognition. -->
-            <p>
-            During my PhD, I spent some time as a Visiting Graduate Scholar at the <a href=http://scai.cs.jhu.edu target="_blank" rel="noopener noreferrer">SCAI Lab</a>, <b>Johns Hopkins University</b>, advised by Prof. <a href=https://tshu.io/ target="_blank" rel="noopener noreferrer">Tianmin Shu</a>.</p>
-            </p>
-            <!-- <p><b>💼 I'm currently on the job market and enjoying learning about new roles and open positions.</b></p> -->
-            <p>
-                <a href="https://www.linkedin.com/in/matteo-bortoletto/" target="_blank" rel="noopener noreferrer" title="Linkedin">[LinkedIn]</a>
-                <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Scholar">[Google Scholar]</a>
-                <a href="https://github.com/MattBortoletto" target="_blank" rel="noopener noreferrer" title="GitHub">[GitHub]</a>
-                <!-- <a href="https://twitter.com/MattBorto" target="_blank" rel="noopener noreferrer" title="X">[X]</a> -->
-                <a href="assets/CV.pdf" title="CV">[CV]</a>
-            </p>
-        <!-- </div>
-        <div id="news" class="tab-content"> -->
-            <!-- <h2>News</h2>
-            <ul>
-                <li>[19.02.2026] 🎙️ Invited talk at the NLP Unit, DWS Group, University of Mannheim</li> 
-                <li>[02.01.2026] 📑 Reviewing for the ACL 2026 Rolling Review (January)</li>
-                <li>[23.12.2025] 📑 Reviewing for EACL 2026 SRW</li>
-                <li>[26.11.2025] 🏆 My student Jan-Philip Thewes has been awarded the Bürkert University Prize for his master thesis</li>
-                <li>[31.08.2025] 🏅 I got selected as volunteer for EMNLP 2025</li>
-                <li>[13.08.2025] 🔥 Two papers accepted at EMNLP 2025 (Suzhou, China)</li>
-                <li>[13.08.2025] 🔥 Paper accepted at TMLR</li>
-                <li>[01.08.2025] 📑 Reviewing for AAAI 2026</li>
-                <li>[29.07.2025] 🔥 Paper accepted at IJCAI 2025 Workshop on Theory of Mind (Montreal, Canada)</li>
-                <li>[02.01.2025] 📑 Reviewing for the ACL 2025 Rolling Review (May)</li>
-                <li>[08.05.2025] 📑 Reviewing for UIST 2025</li>
-                <li>[09.05.2025] 🎙️ Invited talk at the SCAI Lab, Johns Hopkins University</li>
-                <li>[13.04.2025] 🏛️ Starting a position as Visiting Graduate Scholar at the <a href="http://scai.cs.jhu.edu" target="_blank" rel="noopener noreferrer">SCAI Lab</a>, Johns Hopkins University (Baltimore, USA)</li>
-                <li>[01.03.2025] 📑 Reviewing for TOCHI</li>
-                <li>[02.01.2025] 📑 Reviewing for the ACL 2025 Rolling Review (February)</li>
-                <li>[01.10.2024] 📑 Reviewing for CHI 2025</li>
-                <li>[10.07.2024] 🏅 I got selected as volunteer for ACL 2024</li>
-                <li>[04.07.2024] 🔥 Paper accepted at ECAI 2024 (Santiago de Compostela, Spain)</li>
-                <li>[24.06.2024] 🔥 Paper accepted at ICML 2024 Workshop on Mechanistic Interpretability (Vienna, Austria)</li>
-                <li>[16.05.2024] 🔥 Paper accepted at ACL 2024 (Bangkok, Thailand)</li>
-                <li>[01.05.2024] ☀️ I got accepted to the CoGenAI Summer School (Aalto University, Finland)</li>
-                <li>[25.03.2024] 👨🏼‍🏫 Co-organizing “Computational Theory of Mind and Cognition” with Constantin Ruhdorfer & Anna Penzkofer</li>
-                <li>[01.03.2024] 🏆 My student Constantin Ruhdorfer has been awarded the Rul Gunzenhäuser Award for his master thesis</li>
-                <li>[18.12.2023] 🏅 I got selected as volunteer for AAAI 2024</li>
-                <li>[09.12.2023] 🔥 Paper accepted at AAAI 2024 (Vancouver, Canada)</li>
-                <li>[29.09.2023] 📑 Reviewing for CHI 2024</li>
-                <li>[07.04.2023] 🔥 Paper accepted at CogSci 2023 (Sydney, Australia)</li>
-                <li>[27.03.2023] 🔥 Paper accepted at INTERACT 2023 (York, UK)</li>
-                <li>[16.05.2022] 🏰 I attended the <a href="https://www.dagstuhl.de/seminars/seminar-calendar/seminar-details/22202" target="_blank" rel="noopener noreferrer">Dagstuhl Seminar on Anticipatory Human-Machine Interaction</a></li>
-            </ul> -->
+        <div class="nav-group">
+          <a href="https://www.linkedin.com/in/matteo-bortoletto/" target="_blank" class="nav-link ext-link">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=xw2twZ4AAAAJ&hl=en" target="_blank" class="nav-link ext-link">Scholar</a>
+          <a href="https://github.com/MattBortoletto" target="_blank" class="nav-link ext-link">GitHub</a>
+          <a href="assets/CV.pdf" class="nav-link ext-link">CV</a>
         </div>
-        <div id="pubs" class="tab-content">
-            <h2>Research Interests</h2>
-            My research focuses on how AI can understand others' beliefs, goals, preferences, and intentions — a concept known as <em>theory of mind</em> — and how this understanding can improve interactions between humans and AI.
-            In particular, I work on:
-            <ul>
-                <li>Designing and assessing AI models for theory of mind tasks that span multiple modalities, including
-                    vision and natural language 
-                    <a href="https://arxiv.org/pdf/2312.07122" target="_blank" rel="noopener noreferrer">[AAAI'24]</a>
-                    <a href="https://aclanthology.org/2024.acl-long.266.pdf" target="_blank" rel="noopener noreferrer">[ACL'24]</a>
-                    <a href="https://arxiv.org/pdf/2407.06762" target="_blank" rel="noopener noreferrer">[ECAI'24]</a>
-                    <a href="https://arxiv.org/pdf/2508.12480" target="_blank" rel="noopener noreferrer">[IJCAI-W'25]</a></li>
-                <li>Probing and manipulating models' internal representations of mental states <a href="https://arxiv.org/pdf/2406.17513" target="_blank" rel="noopener noreferrer">[EMNLP-F'25]</a></li>
-                <li>Stress-testing theory of mind on large foundation models <a href="http://arxiv.org/pdf/2509.05066" target="_blank" rel="noopener noreferrer">[EMNLP'25]</a></li>
-                <li>Using theory of mind for action selection and intervetion <a href="https://arxiv.org/pdf/2509.05091" target="_blank" rel="noopener noreferrer">[ArXiv]</a></li>
-            </ul>
+      </nav>
 
-            <h2>Publications</h2>
+      <div class="content">
 
-            <h3>Preprints</h3>
-            <p>
-                <b>ProToM: Promoting Prosocial Behaviour via Theory of Mind-Informed Feedback</b><br>
-                <u>M Bortoletto</u>, Y Zhou, L Ying, T Shu, A Bulling<br>
-                <i>arXiv:2509.05091</i>
-                <a href="https://arxiv.org/pdf/2509.05091" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://matteobortoletto.org/protom" target="_blank" rel="noopener noreferrer">[Website]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/protom target="_blank" rel="noopener noreferrer"">[Code]</a>
-            </p>
-            <p>
-                <b>Unsupervised Partner Design Enables Robust Ad-hoc Teamwork</b><br>
-                C Ruhdorfer, <u>M Bortoletto</u>, V Oei, A Penzkofer, A Bulling<br>
-                <i>arXiv:2508.06336</i>
-                <a href="https://arxiv.org/pdf/2508.06336" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/UPD target="_blank" rel="noopener noreferrer"">[Code]</a>
-            </p>
-
-            <h3>Peer Reviewed</h3>
-            <p>
-                <b>ToM-SSI: Evaluating Theory of Mind in Situated Social Interactions</b><br>
-                <u>M Bortoletto</u>, C Ruhdorfer, A Bulling<br>
-                <i>EMNLP 2025</i>
-                <a href="http://arxiv.org/pdf/2509.05066" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/tom-ssi target="_blank" rel="noopener noreferrer"">[Code]</a>
-                <a href="assets/posters/poster_EMNLP_tomssi.pdf" target="_blank" rel="noopener noreferrer">[Poster]</a>
-            </p>
-            <p>
-                <b>Brittle Minds, Fixable Activations: Understanding Belief Representations in Language Models</b><br />
-                <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling <br />
-                <i>EMNLP 2025 Findings</i>
-                <a href="https://arxiv.org/pdf/2406.17513" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/mental-states-in-LMs target="_blank" rel="noopener noreferrer"">[Code]</a>
-                <a href="assets/posters/poster_EMNLP_brittle.pdf" target="_blank" rel="noopener noreferrer">[Poster]</a>
-                <br/>
-                <i>ICML 2024 Workshop on Mechanistic Interpretability</i>
-                <a href="https://openreview.net/pdf?id=yEwEVoH9Be" target="_blank" rel="noopener noreferrer">[OpenReview]</a>
-            </p>
-            <p>
-                <b>The Overcooked Generalisation Challenge</b><br>
-                C Ruhdorfer, <u>M Bortoletto</u>, A Penzkofer, A Bulling<br>
-                <i>TMLR</i>
-                <a href="https://arxiv.org/pdf/2406.17949" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/OGC" target="_blank" rel="noopener noreferrer">[Code]</a>
-            </p>
-            <p>
-                <b>The Yokai Learning Environment: Tracking Beliefs Over Space and Time</b><br>
-                C Ruhdorfer, <u>M Bortoletto</u>, A Bulling<br>
-                <i>IJCAI 2025 Workshop on Theory of Mind (Oral)</i>
-                <a href="https://arxiv.org/pdf/2508.12480" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/Yokai_env" target="_blank" rel="noopener noreferrer">[Code]</a>
-            </p>
-            <p>
-                <b>Explicit Modelling of Theory of Mind for Belief Prediction in Nonverbal Social Interactions</b><br>
-                <u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling<br>
-                <i>ECAI 2024 (Oral)</i>
-                <a href="https://arxiv.org/pdf/2407.06762" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/mtomnet" target="_blank" rel="noopener noreferrer">[Code]</a>
-            </p>
-            <p>
-                <b>Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition</b><br/>
-                <u>M Bortoletto</u>, C Ruhdorfer, A Abdessaied, L Shi, A Bulling <br />
-                <i>ACL 2024</i>
-                <a href="https://aclanthology.org/2024.acl-long.266.pdf" target="_blank" rel="noopener noreferrer">[Proceedings]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/limits-of-tom" target="_blank" rel="noopener noreferrer">[Code]</a>
-                <a href="assets/posters/poster_ACL24.pdf" target="_blank" rel="noopener noreferrer">[Poster]</a>
-            </p>
-            <p>
-                <b>Neural Reasoning about Agents' Goals, Preferences, and Actions</b><br/>
-                <u>M Bortoletto</u>, L Shi, A Bulling <br />
-                <i>AAAI 2024</i>
-                <a href="https://arxiv.org/pdf/2312.07122" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/IRENE" target="_blank" rel="noopener noreferrer">[Code]</a>
-                <a href="assets/posters/AAAI24_poster.pdf" target="_blank" rel="noopener noreferrer">[Poster]</a>
-            </p>
-            <p>
-                <b>Improving Neural Saliency Prediction with a Cognitive Model of Human Visual Attention</b><br />
-                E Sood, L Shi, <u>M Bortoletto</u>, Y Wang, P Müller, A Bulling <br />
-                <i>CogSci 2023</i>
-                <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf" target="_blank" rel="noopener noreferrer">[Proceedings]</a>
-            </p>
-            <p>
-                <b>Exploring Natural Language Processing Methods for Interactive Behaviour Modelling</b><br />
-                G Zhang, <u>M Bortoletto</u>, Z Hu, L Shi, M Bâce, A Bulling <br />
-                <i>INTERACT 2023</i>
-                <a href="https://arxiv.org/pdf/2303.16039" target="_blank" rel="noopener noreferrer">[ArXiv]</a>
-                <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/EMAKI" target="_blank" rel="noopener noreferrer">[Code]</a>
-            </p> 
+        <!-- ABOUT -->
+        <div id="about" class="tab-panel active">
+          <div class="about-body">
+            <p>I'm a Research Engineer at <a href="https://www.kapa.ai/" target="_blank">kapa.ai</a> (YC S23).</p>
+            <p>I'm also a PhD candidate in the <a href="https://www.collaborative-ai.org" target="_blank">Collaborative AI</a> group at the <strong>University of Stuttgart</strong>, advised by Prof. <a href="https://www.collaborative-ai.org/people/bulling/" target="_blank">Andreas Bulling</a>, where my research focuses on <a href="https://en.wikipedia.org/wiki/Theory_of_mind" target="_blank"><em>theory of mind</em></a> in AI.</p>
+            <p>During my PhD, I spent time as a Visiting Graduate Scholar at the <a href="http://scai.cs.jhu.edu" target="_blank">SCAI Lab</a>, <strong>Johns Hopkins University</strong>, advised by Prof. <a href="https://tshu.io/" target="_blank">Tianmin Shu</a>.</p>
+          </div>
         </div>
 
-        <div id="contact" class="tab-content">
-            <h2>Contact</h2>
+        <!-- RESEARCH -->
+        <div id="research" class="tab-panel">
+
+          <div class="section-label">Interests</div>
+          <p style="margin-bottom:0.75rem">My research focuses on how AI can understand others' beliefs, goals, preferences, and intentions — a concept known as <em>theory of mind</em> — and how this understanding can improve human–AI interaction.</p>
+          <ul class="interests-list">
+            <li>Designing and assessing AI models for theory of mind across vision and language <a href="https://arxiv.org/pdf/2312.07122" target="_blank">[AAAI'24]</a> <a href="https://aclanthology.org/2024.acl-long.266.pdf" target="_blank">[ACL'24]</a> <a href="https://arxiv.org/pdf/2407.06762" target="_blank">[ECAI'24]</a> <a href="https://arxiv.org/pdf/2508.12480" target="_blank">[IJCAI-W'25]</a></li>
+            <li>Probing and manipulating internal representations of mental states <a href="https://arxiv.org/pdf/2406.17513" target="_blank">[EMNLP-F'25]</a></li>
+            <li>Stress-testing theory of mind on large foundation models <a href="http://arxiv.org/pdf/2509.05066" target="_blank">[EMNLP'25]</a></li>
+            <li>Using theory of mind for action selection and intervention <a href="https://arxiv.org/pdf/2509.05091" target="_blank">[ArXiv]</a></li>
+          </ul>
+
+          <div class="section-label">Publications</div>
+
+          <div class="section-sublabel">Preprints</div>
+
+          <div class="pub">
+            <div class="pub-title">ProToM: Promoting Prosocial Behaviour via Theory of Mind-Informed Feedback</div>
+            <div class="pub-authors"><u>M Bortoletto</u>, Y Zhou, L Ying, T Shu, A Bulling</div>
+            <div class="pub-venue">arXiv:2509.05091</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2509.05091" target="_blank">[ArXiv]</a>
+              <a href="https://matteobortoletto.org/protom" target="_blank">[Website]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/protom" target="_blank">[Code]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Unsupervised Partner Design Enables Robust Ad-hoc Teamwork</div>
+            <div class="pub-authors">C Ruhdorfer, <u>M Bortoletto</u>, V Oei, A Penzkofer, A Bulling</div>
+            <div class="pub-venue">arXiv:2508.06336</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2508.06336" target="_blank">[ArXiv]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/UPD" target="_blank">[Code]</a>
+            </div>
+          </div>
+
+          <div class="section-sublabel">Peer Reviewed</div>
+
+          <div class="pub">
+            <div class="pub-title">ToM-SSI: Evaluating Theory of Mind in Situated Social Interactions</div>
+            <div class="pub-authors"><u>M Bortoletto</u>, C Ruhdorfer, A Bulling</div>
+            <div class="pub-venue">EMNLP 2025</div>
+            <div class="pub-links">
+              <a href="http://arxiv.org/pdf/2509.05066" target="_blank">[ArXiv]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/tom-ssi" target="_blank">[Code]</a>
+              <a href="assets/posters/poster_EMNLP_tomssi.pdf" target="_blank">[Poster]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Brittle Minds, Fixable Activations: Understanding Belief Representations in Language Models</div>
+            <div class="pub-authors"><u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling</div>
+            <div class="pub-venue">EMNLP 2025 Findings · ICML 2024 Workshop on Mechanistic Interpretability</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2406.17513" target="_blank">[ArXiv]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/mental-states-in-LMs" target="_blank">[Code]</a>
+              <a href="assets/posters/poster_EMNLP_brittle.pdf" target="_blank">[Poster]</a>
+              <a href="https://openreview.net/pdf?id=yEwEVoH9Be" target="_blank">[OpenReview]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">The Overcooked Generalisation Challenge</div>
+            <div class="pub-authors">C Ruhdorfer, <u>M Bortoletto</u>, A Penzkofer, A Bulling</div>
+            <div class="pub-venue">TMLR</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2406.17949" target="_blank">[ArXiv]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/OGC" target="_blank">[Code]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">The Yokai Learning Environment: Tracking Beliefs Over Space and Time</div>
+            <div class="pub-authors">C Ruhdorfer, <u>M Bortoletto</u>, A Bulling</div>
+            <div class="pub-venue">IJCAI 2025 Workshop on Theory of Mind (Oral)</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2508.12480" target="_blank">[ArXiv]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/Yokai_env" target="_blank">[Code]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Explicit Modelling of Theory of Mind for Belief Prediction in Nonverbal Social Interactions</div>
+            <div class="pub-authors"><u>M Bortoletto</u>, C Ruhdorfer, L Shi, A Bulling</div>
+            <div class="pub-venue">ECAI 2024 (Oral)</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2407.06762" target="_blank">[ArXiv]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/mtomnet" target="_blank">[Code]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition</div>
+            <div class="pub-authors"><u>M Bortoletto</u>, C Ruhdorfer, A Abdessaied, L Shi, A Bulling</div>
+            <div class="pub-venue">ACL 2024</div>
+            <div class="pub-links">
+              <a href="https://aclanthology.org/2024.acl-long.266.pdf" target="_blank">[Proceedings]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/limits-of-tom" target="_blank">[Code]</a>
+              <a href="assets/posters/poster_ACL24.pdf" target="_blank">[Poster]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Neural Reasoning about Agents' Goals, Preferences, and Actions</div>
+            <div class="pub-authors"><u>M Bortoletto</u>, L Shi, A Bulling</div>
+            <div class="pub-venue">AAAI 2024</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2312.07122" target="_blank">[ArXiv]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/IRENE" target="_blank">[Code]</a>
+              <a href="assets/posters/AAAI24_poster.pdf" target="_blank">[Poster]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Improving Neural Saliency Prediction with a Cognitive Model of Human Visual Attention</div>
+            <div class="pub-authors">E Sood, L Shi, <u>M Bortoletto</u>, Y Wang, P Müller, A Bulling</div>
+            <div class="pub-venue">CogSci 2023</div>
+            <div class="pub-links">
+              <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf" target="_blank">[Proceedings]</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Exploring Natural Language Processing Methods for Interactive Behaviour Modelling</div>
+            <div class="pub-authors">G Zhang, <u>M Bortoletto</u>, Z Hu, L Shi, M Bâce, A Bulling</div>
+            <div class="pub-venue">INTERACT 2023</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2303.16039" target="_blank">[ArXiv]</a>
+              <a href="https://git.hcics.simtech.uni-stuttgart.de/public-projects/EMAKI" target="_blank">[Code]</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div id="contact" class="tab-panel">
+          <div class="contact-body">
             <p>University: matteo [dot] bortoletto [at] uni-stuttgart [dot] de</p>
             <p>Personal: mabo22 [dot] lab [at] gmail [dot] com</p>
-            <!-- <p>Office: Room 01.027, Pfaffenwaldring 5a, 70569 Stuttgart</p> -->
-            <!-- <h2>Students</h2>
-            <p>
-                I regularly supervise Master and Bachelor theses.
-                If you have an idea for your thesis, feel free to contact me.
-                If you are looking for available projects, check if there are Open Thesis Projects <a href="https://www.perceptualui.org/people/bortoletto/" target="_blank" rel="noopener noreferrer">here</a>.
-            </p> -->
+          </div>
         </div>
+
+      </div>
     </div>
+  </main>
 
-    <script>
-        const buttons = document.querySelectorAll('.tab-btn');
-        const contents = document.querySelectorAll('.tab-content');
+  <script>
+    // Tabs
+    document.querySelectorAll('.nav-link[data-tab]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.nav-link[data-tab]').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
 
-        // --- Tab Switching Logic (Original) ---
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                buttons.forEach(b => b.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
-            });
-        });
-
-        // --- Theme Toggle Logic (Revised for Slider) ---
-        const themeSlider = document.getElementById('theme-slider');
-        const body = document.body;
-
-        // Function to apply the theme state
-        function setThemeState(isDark) {
-            if (isDark) {
-                body.classList.add('dark-mode');
-                themeSlider.checked = true;
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark-mode');
-                themeSlider.checked = false;
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // A. Initial Setup: Read saved preference
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // Determine the initial state based on saved preference or system preference
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            setThemeState(true); // Initial state is Dark
-        } else {
-            setThemeState(false); // Initial state is Light (or saved light)
-        }
-
-        // B. Event Listener: Handle the click (change event for checkbox)
-        themeSlider.addEventListener('change', (event) => {
-            // The checked state directly tells us the desired mode
-            setThemeState(event.target.checked);
-        });
-
-        console.log('Theme slider script loaded and initialized.');
-    </script>
+    // Dark mode
+    const slider = document.getElementById('theme-slider');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      slider.checked = dark;
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches));
+    slider.addEventListener('change', e => setTheme(e.target.checked));
+  </script>
 </body>
-
 </html>
