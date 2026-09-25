@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Matteo Bortoletto</title>
   <style>
     body {
@@ -15,15 +15,69 @@
       font-family: Geist, Verdana, Arial, Helvetica, sans-serif;
       font-size: 11pt;
       line-height: 1.4;
+      background: #faf7ee;
     }
     a {
       color: rgb(20,20,19);
+    }
+
+    /* Herbarium: title, section headings and leaf bullets */
+    :root {
+      --ink: #1d261d;
+      --moss: #365536;
+      --geranium: #b13c27;
+      --mustard: #a87a0e;
+      --amber: #8b5a1a;
+      --bark: #5b3f2c;
+      --font-display: Fraunces, "Iowan Old Style", Georgia, serif;
+    }
+    .hb-title {
+      font-family: var(--font-display);
+      font-size: 40px;
+      line-height: 44px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      font-variation-settings: "SOFT" 100, "opsz" 72;
+      color: var(--ink);
+    }
+    .c-moss { color: var(--moss); }
+    .c-geranium { color: var(--geranium); }
+    .c-mustard { color: var(--mustard); }
+    .c-amber { color: var(--amber); }
+    .c-bark { color: var(--bark); }
+    .hb-section {
+      margin: 40px 0 16px;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 30px;
+      font-variation-settings: "SOFT" 100, "opsz" 36;
+      color: var(--ink);
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 8px;
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      background: var(--moss);
+      border-radius: 100% 0;
     }
   </style>
 </head>
 <body>
 
-  <h1>Matteo Bortoletto</h1>
+  <h1 class="hb-title" aria-label="Matteo Bortoletto"><span class="c-moss">M</span><span class="c-geranium">a</span><span class="c-mustard">t</span><span class="c-amber">t</span><span class="c-bark">e</span><span class="c-moss">o</span> <span class="c-geranium">B</span><span class="c-mustard">o</span><span class="c-amber">r</span><span class="c-bark">t</span><span class="c-moss">o</span><span class="c-geranium">l</span><span class="c-mustard">e</span><span class="c-amber">t</span><span class="c-bark">t</span><span class="c-moss">o</span></h1>
 
   <p>Hi, I'm Matteo!</p>
 
@@ -41,7 +95,7 @@
     <a href="https://github.com/MattBortoletto" target="_blank">[GitHub]</a>
   </p>
 
-  <h2>Interests</h2>
+  <h2 class="hb-section">Interests</h2>
 
   <p>I am currently working on RAG and search agents. In particular, I'm interested in multimodal RAG, agentic retrieval, and post-training (SFT, RL).</p>
 
@@ -54,7 +108,7 @@
     <li>Using theory of mind for action selection and intervention <a href="https://arxiv.org/pdf/2509.05091" target="_blank">[ACL'26]</a></li>
   </ul>
 
-  <h2>Seletect Publications</h2>
+  <h2 class="hb-section">Selected publications</h2>
 
   <p>
     <strong>The Yokai Learning Environment: Tracking Beliefs Over Space and Time</strong><br>
@@ -126,7 +180,7 @@
     <a href="https://escholarship.org/content/qt5968p71m/qt5968p71m.pdf" target="_blank">[Proceedings]</a>
   </p>
 
-  <h2>Contact</h2>
+  <h2 class="hb-section">Contact</h2>
 
   <p>
     University: matteo [dot] bortoletto [at] uni-stuttgart [dot] de<br>
