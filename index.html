@@ -8,19 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Matteo Bortoletto</title>
   <style>
-    body {
-      max-width: 650px;
-      margin: 40px auto;
-      padding: 0 10px;
-      font-family: Geist, Verdana, Arial, Helvetica, sans-serif;
-      font-size: 11pt;
-      line-height: 1.4;
-      background: #faf7ee;
-    }
-    a {
-      color: rgb(20,20,19);
-    }
-
     /* Herbarium: title, section headings and leaf bullets */
     :root {
       --ink: #1d261d;
@@ -30,6 +17,19 @@
       --amber: #8b5a1a;
       --bark: #5b3f2c;
       --font-display: Fraunces, "Iowan Old Style", Georgia, serif;
+    }
+    body {
+      max-width: 650px;
+      margin: 40px auto;
+      padding: 0 10px;
+      font-family: Geist, Verdana, Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      background: #faf7ee;
+      color: var(--ink)
+    }
+    a {
+      color: var(--ink);
     }
     .hb-title {
       font-family: var(--font-display);
